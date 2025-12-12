@@ -37,9 +37,12 @@
     cursor: none;
     /* Custom Cursor enabled */
 
-    /* iOS Tap Highlight Removal */
+    /* iOS Tap Highlight Removal & Default Style Reset */
     -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
+    appearance: none;
 }
+
 
 html {
     /* Prevent text inflation on rotation */
@@ -52,6 +55,8 @@ body {
     /* Use dvh for mobile browsers */
     min-height: 100vh;
     min-height: 100dvh;
+    /* iOS Safe Area */
+    padding-top: env(safe-area-inset-top);
     background-color: var(--color-bg);
     color: var(--color-text);
     font-family: var(--font-body);
@@ -625,7 +630,11 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 15vw;
+        font-size: 11vw;
+        /* Reduced from 15vw/11vw to fit */
+        word-break: break-word;
+        /* Prevent overflow */
+        max-width: 100%;
     }
 
     .work-item {

@@ -19,8 +19,18 @@ var SoundManager = {
         this.sounds['welcome'].volume = 0.5;
         this.sounds['click'].volume = 0.3;
 
-        // Always ask for permission on load (No persistence)
-        this.showModal();
+        // Check for navigation type (Reload vs Navigate)
+        const navEntries = performance.getEntriesByType("navigation");
+        const isReload = navEntries.length > 0 && navEntries[0].type === 'reload';
+        const savedPref = sessionStorage.getItem('sound_preference');
+
+        // Logic: Show modal if it's a RELOAD or if it's the FIRST VISIT (no saved pref)
+        if (isReload || !savedPref) {
+            this.showModal();
+        } else {
+            // Internal navigation with saved preference -> Apply silently
+            this.setPreference(savedPref, true); // true = silent mode (no modal logic needed)
+        }
 
         // Keyboard Shortcuts (Y = Yes, N = No)
         document.addEventListener('keydown', (e) => {
@@ -44,19 +54,29 @@ var SoundManager = {
         }
     },
 
-    setPreference(choice) {
-        // Did not save to localStorage as requested ("ask every time")
+    setPreference(choice, silent = false) {
+        // Save preference to sessionStorage (persists for tab session)
+        sessionStorage.setItem('sound_preference', choice);
+
         const modal = document.getElementById('sound-modal');
-        if (modal) {
+        if (modal && !silent) {
             modal.style.display = 'none';
             document.body.style.overflow = ''; // Restore scroll
+        } else if (silent && modal) {
+            // Ensure modal is hidden in silent mode (if css didn't hide it)
+            modal.style.display = 'none';
         }
 
         if (choice === 'yes') {
             this.audioEnabled = true;
             this.setupListeners();
-            // Play welcome sound immediately on choice
-            this.playSound('welcome');
+            // Play welcome sound only if explicit user choice (not silent reload)
+            // User requested: "Reload -> Show Modal". internal -> silent.
+            // If silent restoring, maybe don't play welcome sound? 
+            // Usually re-playing welcome sound on every internal page load is annoying.
+            if (!silent) {
+                this.playSound('welcome');
+            }
         } else {
             this.audioEnabled = false;
         }
