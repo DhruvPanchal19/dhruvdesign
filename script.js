@@ -1,3 +1,121 @@
+// 0. Initialize AuthManager (Must be first)
+if (typeof AuthManager !== 'undefined') {
+    AuthManager.init();
+} else {
+    console.warn('AuthManager not found. RBAC features disabled.');
+}
+
+// 0.1 Sound Manager (Audio Experience)
+var SoundManager = {
+    audioEnabled: false,
+    sounds: {},
+
+    init() {
+        // Preload sounds
+        this.sounds['welcome'] = new Audio('backgroundsound/welcome.mp3');
+        this.sounds['click'] = new Audio('backgroundsound/btn-click.mp3');
+
+        // Adjust volumes
+        this.sounds['welcome'].volume = 0.5;
+        this.sounds['click'].volume = 0.3;
+
+        // Always ask for permission on load (No persistence)
+        this.showModal();
+
+        // Keyboard Shortcuts (Y = Yes, N = No)
+        document.addEventListener('keydown', (e) => {
+            const modal = document.getElementById('sound-modal');
+            // Only react if modal is visible
+            if (modal && modal.style.display !== 'none') {
+                if (e.key.toLowerCase() === 'y') {
+                    this.setPreference('yes');
+                } else if (e.key.toLowerCase() === 'n') {
+                    this.setPreference('no');
+                }
+            }
+        });
+    },
+
+    showModal() {
+        const modal = document.getElementById('sound-modal');
+        if (modal) {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Block scroll
+        }
+    },
+
+    setPreference(choice) {
+        // Did not save to localStorage as requested ("ask every time")
+        const modal = document.getElementById('sound-modal');
+        if (modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = ''; // Restore scroll
+        }
+
+        if (choice === 'yes') {
+            this.audioEnabled = true;
+            this.setupListeners();
+            // Play welcome sound immediately on choice
+            this.playSound('welcome');
+        } else {
+            this.audioEnabled = false;
+        }
+
+        // START HERO ANIMATION triggers after choice is made (Yes OR No)
+        startHeroAnimation();
+    },
+
+    setupListeners() {
+        // Global Click
+        document.addEventListener('click', (e) => {
+            if (e.target.tagName === 'BUTTON' || e.target.closest('button') || e.target.tagName === 'A' || e.target.closest('a')) {
+                this.playSound('click');
+            }
+        });
+
+        // Hover Sounds for Interactive Elements
+        const interactiveSelector = 'a, button, .work-item, .nav-link, .tool-tag';
+        document.querySelectorAll(interactiveSelector).forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                this.playSound('hover');
+            });
+        });
+    },
+
+    playSound(name) {
+        if (!this.audioEnabled || !this.sounds[name]) return;
+
+        if (name === 'click' || name === 'hover') {
+            const clone = this.sounds[name].cloneNode();
+            clone.volume = this.sounds[name].volume;
+            clone.play().catch(err => console.log('Audio play blocked', err));
+        } else {
+            this.sounds[name].play().catch(err => console.log('Audio play blocked', err));
+        }
+    }
+};
+
+// Initialize Sound Manager immediately
+document.addEventListener('DOMContentLoaded', () => {
+    SoundManager.init();
+
+    // Keyboard Shortcuts (Y = Yes, N = No) captured at document level for reliability
+    document.addEventListener('keydown', (e) => {
+        const modal = document.getElementById('sound-modal');
+        // Check computed style for visibility to be safe
+        const isVisible = modal && (modal.style.display === 'flex' || getComputedStyle(modal).display !== 'none');
+
+        if (isVisible) {
+            if (e.key.toLowerCase() === 'y') {
+                SoundManager.setPreference('yes');
+            } else if (e.key.toLowerCase() === 'n') {
+                SoundManager.setPreference('no');
+            }
+        }
+    });
+});
+
+
 // 1. Initialize Lenis (Smooth Scroll)
 // Wrap in try-catch to prevent script crash if CDN fails
 try {
@@ -58,10 +176,13 @@ if (cursorDot && cursorCircle) {
     });
 }
 
-// 3. Reveal Sequence (Immediate)
-document.addEventListener('DOMContentLoaded', () => {
+// 3. Reveal Sequence (Triggered by SoundManager)
+function startHeroAnimation() {
     // Reveal Sequence
     if (typeof gsap !== 'undefined') {
+        // Ensure visibility first (GSAP set matches CSS opacity 0)
+        gsap.set('.hero-title, .hero-subtitle', { opacity: 1 });
+
         const tl = gsap.timeline();
 
         tl.from('.hero-title .word', {
@@ -70,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
             stagger: 0.1,
             ease: 'power4.out',
             skewY: 7,
-            delay: 0.5 // Short delay for smoothness
+            delay: 0.2
         })
             .to('.hero-title .word', {
                 skewY: 0,
@@ -84,7 +205,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 ease: 'power2.out'
             }, "-=1");
     }
-});
+}
+// Note: startHeroAnimation is now called inside SoundManager.setPreference
+// Removed checking for DOMContentLoaded for hero animation as it is now gated.
 
 // 4. "300IQ" Logic - Liquid Skew & Parallax
 if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
@@ -246,6 +369,26 @@ inputs.forEach(input => {
     });
 });
 
+// 6a. User Badge Logic
+// 6a. User Badge Logic
+function updateUserBadge() {
+    const badge = document.getElementById('user-badge');
+    if (!badge || typeof AuthManager === 'undefined') return;
+
+    const user = AuthManager.getCurrentUser();
+    if (user && user.name) {
+        // Use full name from config (e.g. "Dhruv (Owner)")
+        badge.textContent = user.name;
+        badge.style.display = 'inline-block';
+    } else {
+        badge.style.display = 'none';
+        badge.textContent = ''; // Clear text
+    }
+}
+
+// Ensure it runs on load and after login actions
+document.addEventListener('DOMContentLoaded', updateUserBadge);
+
 // 6. Send Email Logic
 function sendEmail(event) {
     event.preventDefault();
@@ -260,66 +403,251 @@ function sendEmail(event) {
     window.location.href = `mailto:drvpcl24@gmail.com?subject=${subject}&body=${body}`;
 }
 
-// 7. Password Logic
+// 7. Password & Auth Logic (Refactored)
 const passwordModal = document.getElementById('password-modal');
 const passwordInput = document.getElementById('cv-password');
-const cvUrl = "Dhruv_Panchal_UIUX_Designer_compressed.pdf"; // The file to download
+const loginModal = document.getElementById('login-modal');
+const dashboard = document.getElementById('admin-dashboard');
+const cvUrl = "Dhruv_Panchal_UIUX_Designer_compressed.pdf";
 
-function openPasswordModal(event) {
-    if (event) event.preventDefault();
-    passwordModal.classList.add('active');
-    setTimeout(() => passwordInput.focus(), 100);
-}
+let pendingAction = null; // 'CV' or 'REDIRECT'
+let pendingUrl = '';
 
-function closePasswordModal() {
-    passwordModal.classList.remove('active');
-    passwordInput.value = ''; // Clear input
-}
+// --- Navigation Handlers ---
 
-function checkPassword() {
-    const password = passwordInput.value;
-
-    if (password === '1234567890') {
-        // Correct Password
-        closePasswordModal();
-
-        // Trigger Download
-        const link = document.createElement('a');
-        link.href = cvUrl;
-        link.download = 'Dhruv_Panchal_CV.pdf'; // Optional: rename file on download
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-
+function handleProjectClick(url) {
+    if (AuthManager.canAccess(url)) {
+        window.location.href = url;
     } else {
-        // Wrong Password
-        closePasswordModal();
-
-        // Redirect to Inquiry
-        if (typeof gsap !== 'undefined') {
-            gsap.to(window, { duration: 1, scrollTo: "#inquiry", ease: "power2.out" });
-        } else {
-            document.getElementById('inquiry').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Optional: Shake effect or visual feedback could be added here before closing
+        pendingAction = 'REDIRECT';
+        pendingUrl = url;
+        openPasswordModal();
     }
 }
 
-// Allow Enter key to submit
-if (passwordInput) {
-    passwordInput.addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') {
-            checkPassword();
-        }
-    });
+function handleCVClick(event) {
+    if (event) event.preventDefault();
+    if (AuthManager.canAccess('cv')) {
+        downloadCV();
+    } else {
+        pendingAction = 'CV';
+        openPasswordModal();
+    }
 }
 
-// Close on background click
+// --- Modal Controls ---
+
+function openPasswordModal(event) {
+    if (event) event.preventDefault();
+    if (passwordModal && passwordInput) {
+        passwordModal.classList.add('active');
+        setTimeout(() => passwordInput.focus(), 100);
+    }
+}
+
+function closePasswordModal() {
+    if (passwordModal) passwordModal.classList.remove('active');
+    if (passwordInput) passwordInput.value = '';
+    pendingAction = null;
+    pendingUrl = '';
+}
+
+// --- Modal Functions ---
+
+function openLoginModal(event) {
+    if (event) event.preventDefault();
+
+    // Check if already logged in
+    const user = AuthManager.getCurrentUser();
+
+    if (user && loginModal) {
+        // Show "Already Logged In" State
+        const content = loginModal.querySelector('.modal-content');
+
+        // Simple Dynamic Switch
+        content.innerHTML = `
+            <h3 class="modal-title">Account Status</h3>
+            <p class="modal-desc" style="margin-bottom: 2rem;">You are currently logged in as:<br><strong style="color: var(--color-accent);">${user.email}</strong></p>
+            
+            <div class="modal-actions" style="flex-direction: column; gap: 1rem;">
+                <button onclick="handleLogout()" class="submit-btn hover-trigger" style="width: 100%; background: #333;">Logout</button>
+                ${user.role === 'ADMIN' ? '<button onclick="openAdminDashboard(); closeLoginModal();" class="submit-btn hover-trigger" style="width: 100%;">Open Dashboard</button>' : ''}
+                <button onclick="closeLoginModal(); window.location.reload();" class="cv-link hover-trigger" style="border: none; background: none; font-size: 0.8rem;">Cancel</button>
+            </div>
+        `;
+
+        loginModal.classList.add('active');
+
+    } else if (loginModal) {
+        const content = loginModal.querySelector('.modal-content');
+        // Restore Default Login Form
+        content.innerHTML = `
+            <h3 class="modal-title">Sign In</h3>
+            <p class="modal-desc">Enter your credentials to access the portfolio manager.</p>
+
+            <div class="form-group">
+                <input type="email" id="login-email" class="form-input hover-trigger" placeholder=" " autocomplete="off">
+                <label for="login-email" class="form-label">Email Address</label>
+            </div>
+            
+            <div class="form-group" style="margin-bottom: 2rem;">
+                <input type="password" id="login-pass" class="form-input hover-trigger" placeholder=" " autocomplete="off">
+                <label for="login-pass" class="form-label">Password</label>
+            </div>
+
+            <div class="modal-actions">
+                <button onclick="handleLogin()" class="submit-btn hover-trigger" style="width: 100%;">Login</button>
+                <button onclick="closeLoginModal()" class="cv-link hover-trigger"
+                    style="border: none; background: none; font-size: 0.8rem; margin-top: 1rem;">Cancel</button>
+            </div>
+        `;
+
+        loginModal.classList.add('active');
+        // setTimeout(() => document.getElementById('login-email').focus(), 100);
+    }
+}
+
+function handleLogout() {
+    AuthManager.logout();
+    closeLoginModal();
+}
+
+function closeLoginModal() {
+    if (loginModal) loginModal.classList.remove('active');
+}
+
+// --- Auth Actions ---
+
+function checkPassword() {
+    if (!passwordInput) return;
+    const inputPass = passwordInput.value;
+
+    // Verify against Common Password (for Guest Access)
+    // OR if User is VIP/Admin (though they shouldn't see this modal ideally)
+    if (AuthManager.verifyCommonPassword(inputPass)) {
+        localStorage.setItem('portfolio_auth', 'true');
+        closePasswordModal();
+        executePendingAction();
+    } else {
+        alert("Incorrect password.");
+        passwordInput.value = '';
+    }
+}
+
+function handleLogin() {
+    const email = document.getElementById('login-email').value;
+    const pass = document.getElementById('login-pass').value;
+
+    const result = AuthManager.login(email, pass);
+
+    if (result.success) {
+        closeLoginModal();
+        updateUserBadge(); // Update UI immediately
+        if (result.role === 'ADMIN') {
+            openAdminDashboard();
+        } else {
+            // VIP just gets access
+            alert(`Welcome back, ${email}! You now have full access.`);
+            window.location.reload(); // Refresh to update UI/State
+        }
+    } else {
+        alert(result.message);
+    }
+}
+
+function executePendingAction() {
+    if (pendingAction === 'REDIRECT' && pendingUrl) {
+        window.location.href = pendingUrl;
+    } else if (pendingAction === 'CV') {
+        downloadCV();
+    }
+}
+
+function downloadCV() {
+    const link = document.createElement('a');
+    link.href = cvUrl;
+    link.download = 'Dhruv_Panchal_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+// --- Admin Dashboard Logic ---
+
+function openAdminDashboard() {
+    if (!AuthManager.isAdmin()) return;
+    dashboard.style.display = 'block';
+    renderProjectList();
+
+    // Pre-fill inputs (optional)
+    document.getElementById('vip-pass-input').placeholder = "Enter new password for VIP";
+}
+
+function updateVIPPassword() {
+    const newPass = document.getElementById('vip-pass-input').value;
+    if (newPass) {
+        const success = AuthManager.updateUserPassword('drvpcl24@gmail.com', newPass);
+        if (success) alert("VIP Password Updated!");
+    }
+}
+
+function updateCommonPassword() {
+    const newPass = document.getElementById('common-pass-input').value;
+    if (newPass) {
+        const success = AuthManager.updateCommonPassword('common', newPass);
+        if (success) alert("Global Access Password Updated!");
+    }
+}
+
+function renderProjectList() {
+    const list = document.getElementById('admin-project-list');
+    list.innerHTML = '';
+
+    const projects = AuthManager.config.projects;
+    for (const [url, config] of Object.entries(projects)) {
+        const row = document.createElement('div');
+        row.className = `project-row ${config.locked ? 'locked' : 'unlocked'}`;
+
+        // Shorten URL for display
+        const name = url.split('/').pop();
+
+        row.innerHTML = `
+            <span>${name}</span>
+            <button onclick="toggleLock('${url}')">
+                ${config.locked ? 'LOCKED' : 'PUBLIC'}
+            </button>
+        `;
+        list.appendChild(row);
+    }
+}
+
+window.toggleLock = function (url) {
+    AuthManager.toggleProjectLock(url);
+    renderProjectList(); // Re-render
+};
+
+// --- Event Listeners ---
+
+// Close Login on Outside Click
+if (loginModal) {
+    loginModal.addEventListener('click', (e) => {
+        if (e.target === loginModal) closeLoginModal();
+    });
+}
+// Enter Key Setup
+const loginPass = document.getElementById('login-pass');
+if (loginPass) {
+    loginPass.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') handleLogin();
+    });
+}
+if (passwordInput) {
+    passwordInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') checkPassword();
+    });
+}
 if (passwordModal) {
     passwordModal.addEventListener('click', (e) => {
-        if (e.target === passwordModal) {
-            closePasswordModal();
-        }
+        if (e.target === passwordModal) closePasswordModal();
     });
 }

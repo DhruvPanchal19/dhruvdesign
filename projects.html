@@ -2,107 +2,277 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Projects | Dhruv Panchal</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>All Projects | Dhruv Panchal</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syncopate:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syncopate:wght@400;700&display=swap"
+                rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
 </head>
 
 <body>
 
-    <div class="cursor-dot"></div>
-    <div class="cursor-circle"></div>
-    <div class="noise-overlay"></div>
+        <div class="cursor-dot"></div>
+        <div class="cursor-circle"></div>
+        <div class="noise-overlay"></div>
 
-    <nav class="nav-bar">
-        <a href="index.html" class="nav-link hover-trigger">Back to Home</a>
-    </nav>
+        <nav class="nav-bar">
+                <span id="user-badge" class="nav-link user-badge"
+                        style="display:none; color: var(--color-accent); font-weight: bold; margin-right: auto;"></span>
+                <a href="index.html" class="nav-link hover-trigger">Back to Home</a>
+        </nav>
 
-    <main id="main-content">
-        <section class="work-section" style="padding-top: 10rem;">
-            <div class="section-label" style="margin-bottom: 4rem; font-family: var(--font-mono); opacity: 0.6;">( FULL
-                ARCHIVE / 40+ ITEMS )</div>
+        <main id="main-content">
+                <section class="work-section" style="padding-top: 10rem;">
+                        <div class="section-label"
+                                style="margin-bottom: 4rem; font-family: var(--font-mono); opacity: 0.6;">( FULL
+                                ARCHIVE / 40+ ITEMS )</div>
 
-            <div class="work-list">
+                        <div class="work-list">
 
-                <!-- Expanded List -->
-                <!-- eMAnager & Dashboards -->
-                <a href="casestudies/case-study-emanager-home.html" class="work-item hover-trigger"><span
-                        class="work-name">eManager Home Screen</span></a>
-                <a href="casestudies/case-study-noc-dashboard.html" class="work-item hover-trigger"><span
-                        class="work-name">NOC Alert Dashboard</span></a>
-                <a href="casestudies/case-study-noc-work-panel.html" class="work-item hover-trigger"><span
-                        class="work-name">NOC Work Panel</span></a>
-                <a href="casestudies/case-study-unique-case.html" class="work-item hover-trigger"><span
-                        class="work-name">Unique Case Creation</span></a>
-                <a href="casestudies/case-study-support-call.html" class="work-item hover-trigger"><span
-                        class="work-name">Support Call System</span></a>
-                <a href="casestudies/case-study-procurement.html" class="work-item hover-trigger"><span
-                        class="work-name">Procurement Module</span></a>
-                <a href="casestudies/case-study-pats-dashboard.html" class="work-item hover-trigger"><span
-                        class="work-name">PATs Dashboard</span></a>
-                <a href="casestudies/case-study-emanager-resource.html" class="work-item hover-trigger"><span
-                        class="work-name">eManager Resource Screen</span></a>
-                <a href="casestudies/case-study-employee-data.html" class="work-item hover-trigger"><span
-                        class="work-name">Employee Data Change</span></a>
-                <a href="casestudies/case-study-pm-work-panel.html" class="work-item hover-trigger"><span
-                        class="work-name">PM Work Panel</span></a>
+                                <!-- Expanded List -->
+                                <!-- eMAnager & Dashboards -->
+                                <a href="#"
+                                        onclick="handleProjectClick('casestudies/case-study-emanager-home.html'); return false;"
+                                        class="work-item hover-trigger"><span class="work-name">eManager Home
+                                                Screen</span></a>
+                                <a href="#"
+                                        onclick="handleProjectClick('casestudies/case-study-noc-dashboard.html'); return false;"
+                                        class="work-item hover-trigger"><span class="work-name">NOC Alert
+                                                Dashboard</span></a>
+                                <a href="#"
+                                        onclick="handleProjectClick('casestudies/case-study-noc-work-panel.html'); return false;"
+                                        class="work-item hover-trigger"><span class="work-name">NOC Work
+                                                Panel</span></a>
+                                <a href="#"
+                                        onclick="handleProjectClick('casestudies/case-study-unique-case.html'); return false;"
+                                        class="work-item hover-trigger"><span class="work-name">Unique Case
+                                                Creation</span></a>
+                                <a href="#"
+                                        onclick="handleProjectClick('casestudies/case-study-support-call.html'); return false;"
+                                        class="work-item hover-trigger"><span class="work-name">Support Call
+                                                System</span></a>
+                                <a href="#"
+                                        onclick="handleProjectClick('casestudies/case-study-procurement.html'); return false;"
+                                        class="work-item hover-trigger"><span class="work-name">Procurement
+                                                Module</span></a>
+                                <a href="#"
+                                        onclick="handleProjectClick('casestudies/case-study-pats-dashboard.html'); return false;"
+                                        class="work-item hover-trigger"><span class="work-name">PATs
+                                                Dashboard</span></a>
+                                <a href="#"
+                                        onclick="handleProjectClick('casestudies/case-study-emanager-resource.html'); return false;"
+                                        class="work-item hover-trigger"><span class="work-name">eManager Resource
+                                                Screen</span></a>
+                                <a href="#"
+                                        onclick="handleProjectClick('casestudies/case-study-employee-data.html'); return false;"
+                                        class="work-item hover-trigger"><span class="work-name">Employee Data
+                                                Change</span></a>
+                                <a href="#"
+                                        onclick="handleProjectClick('casestudies/case-study-pm-work-panel.html'); return false;"
+                                        class="work-item hover-trigger"><span class="work-name">PM Work Panel</span></a>
 
-                <!-- University & Help -->
-                <a href="casestudies/case-study-university-help.html" class="work-item hover-trigger"><span
-                        class="work-name">University Help Forum</span></a>
-                <a href="casestudies/case-study-ecrm-responsive.html" class="work-item hover-trigger"><span
-                        class="work-name">eCRM Responsive</span></a>
-                <a href="casestudies/case-study-ecw-university-responsive.html" class="work-item hover-trigger"><span
-                        class="work-name">eCW University Responsive</span></a>
-                <a href="casestudies/case-study-hr-module.html" class="work-item hover-trigger"><span
-                        class="work-name">HR Module Redesign</span></a>
-                <a href="casestudies/case-study-support-portal-slots.html" class="work-item hover-trigger"><span
-                        class="work-name">Support Portal Slots</span></a>
-                <a href="casestudies/case-study-fax-alert.html" class="work-item hover-trigger"><span
-                        class="work-name">FAX Alert Portal</span></a>
-                <a href="casestudies/case-study-printing-material.html" class="work-item hover-trigger"><span
-                        class="work-name">Printing Material</span></a>
-                <a href="casestudies/case-study-auto-assign-webinar.html" class="work-item hover-trigger"><span
-                        class="work-name">Auto Assign Webinar</span></a>
-                <a href="casestudies/case-study-support-portal-2fa.html" class="work-item hover-trigger"><span
-                        class="work-name">Support Portal 2FA</span></a>
+                                <!-- University & Help -->
+                                <a href="#"
+                                        onclick="handleProjectClick('casestudies/case-study-university-help.html'); return false;"
+                                        class="work-item hover-trigger"><span class="work-name">University Help
+                                                Forum</span></a>
+                                <a href="#"
+                                        onclick="handleProjectClick('casestudies/case-study-ecrm-responsive.html'); return false;"
+                                        class="work-item hover-trigger"><span class="work-name">eCRM
+                                                Responsive</span></a>
+                                <a href="#"
+                                        onclick="handleProjectClick('casestudies/case-study-ecw-university-responsive.html'); return false;"
+                                        class="work-item hover-trigger"><span class="work-name">eCW University
+                                                Responsive</span></a>
+                                <a href="#"
+                                        onclick="handleProjectClick('casestudies/case-study-hr-module.html'); return false;"
+                                        class="work-item hover-trigger"><span class="work-name">HR Module
+                                                Redesign</span></a>
+                                <a href="#"
+                                        onclick="handleProjectClick('casestudies/case-study-support-portal-slots.html'); return false;"
+                                        class="work-item hover-trigger"><span class="work-name">Support Portal
+                                                Slots</span></a>
+                                <a href="#"
+                                        onclick="handleProjectClick('casestudies/case-study-fax-alert.html'); return false;"
+                                        class="work-item hover-trigger"><span class="work-name">FAX Alert
+                                                Portal</span></a>
+                                <a href="#"
+                                        onclick="handleProjectClick('casestudies/case-study-printing-material.html'); return false;"
+                                        class="work-item hover-trigger"><span class="work-name">Printing
+                                                Material</span></a>
+                                <a href="#"
+                                        onclick="handleProjectClick('casestudies/case-study-auto-assign-webinar.html'); return false;"
+                                        class="work-item hover-trigger"><span class="work-name">Auto Assign
+                                                Webinar</span></a>
+                                <a href="#"
+                                        onclick="handleProjectClick('casestudies/case-study-support-portal-2fa.html'); return false;"
+                                        class="work-item hover-trigger"><span class="work-name">Support Portal
+                                                2FA</span></a>
 
-                <!-- AI & Advanced -->
-                <a href="casestudies/case-study-ai-case-summary.html" class="work-item hover-trigger"><span
-                        class="work-name">AI Case Summary Design</span></a>
-                <a href="casestudies/case-study-scrum-ecw.html" class="work-item hover-trigger"><span
-                        class="work-name">Scrum eCW University</span></a>
-                <a href="casestudies/case-study-rm-module.html" class="work-item hover-trigger"><span
-                        class="work-name">RM Module</span></a>
-                <a href="casestudies/case-study-rm-stakeholder.html" class="work-item hover-trigger"><span
-                        class="work-name">RM Stakeholder Report</span></a>
-                <a href="casestudies/case-study-ecrm-ai-search.html" class="work-item hover-trigger"><span
-                        class="work-name">eCRM AI Search</span></a>
-                <a href="casestudies/case-study-lms-admin.html" class="work-item hover-trigger"><span
-                        class="work-name">LMS Admin Panel</span></a>
-                <a href="casestudies/case-study-lms-user.html" class="work-item hover-trigger"><span
-                        class="work-name">LMS User Panel</span></a>
+                                <!-- AI & Advanced -->
+                                <a href="#"
+                                        onclick="handleProjectClick('casestudies/case-study-ai-case-summary.html'); return false;"
+                                        class="work-item hover-trigger"><span class="work-name">AI Case Summary
+                                                Design</span></a>
+                                <a href="#"
+                                        onclick="handleProjectClick('casestudies/case-study-scrum-ecw.html'); return false;"
+                                        class="work-item hover-trigger"><span class="work-name">Scrum eCW
+                                                University</span></a>
+                                <a href="#"
+                                        onclick="handleProjectClick('casestudies/case-study-rm-module.html'); return false;"
+                                        class="work-item hover-trigger"><span class="work-name">RM Module</span></a>
+                                <a href="#"
+                                        onclick="handleProjectClick('casestudies/case-study-rm-stakeholder.html'); return false;"
+                                        class="work-item hover-trigger"><span class="work-name">RM Stakeholder
+                                                Report</span></a>
+                                <a href="#"
+                                        onclick="handleProjectClick('casestudies/case-study-ecrm-ai-search.html'); return false;"
+                                        class="work-item hover-trigger"><span class="work-name">eCRM AI
+                                                Search</span></a>
+                                <a href="#"
+                                        onclick="handleProjectClick('casestudies/case-study-lms-admin.html'); return false;"
+                                        class="work-item hover-trigger"><span class="work-name">LMS Admin
+                                                Panel</span></a>
+                                <a href="#"
+                                        onclick="handleProjectClick('casestudies/case-study-lms-user.html'); return false;"
+                                        class="work-item hover-trigger"><span class="work-name">LMS User
+                                                Panel</span></a>
 
-            </div>
+                        </div>
 
-            <div class="action-wrapper" style="margin-top: 5rem; text-align: center;">
-                <a href="index.html" class="submit-btn hover-trigger">Back to Home</a>
-            </div>
-        </section>
-    </main>
+                        <div class="action-wrapper" style="margin-top: 5rem; text-align: center;">
+                                <a href="index.html" class="submit-btn hover-trigger">Back to Home</a>
+                        </div>
+                </section>
+                <!-- Password Modal -->
+                <div id="password-modal" class="password-modal">
+                        <div class="modal-content">
+                                <h3 class="modal-title">Protected Content</h3>
+                                <p class="modal-desc">This content is locked. Please enter the password to continue.</p>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="script.js"></script>
+                                <div class="form-group" style="margin-bottom: 2rem;">
+                                        <input type="password" id="cv-password" class="form-input hover-trigger"
+                                                placeholder=" " autocomplete="off">
+                                        <label for="cv-password" class="form-label">Password</label>
+                                </div>
+
+                                <div class="modal-actions">
+                                        <button onclick="checkPassword()" class="submit-btn hover-trigger"
+                                                style="width: 100%;">Unlock</button>
+                                        <button onclick="closePasswordModal()" class="cv-link hover-trigger"
+                                                style="border: none; background: none; font-size: 0.8rem; margin-top: 1rem;">Cancel</button>
+                                </div>
+
+                                <div class="modal-division"
+                                        style="margin: 2rem 0; border-top: 1px solid var(--color-border);"></div>
+
+                                <div class="modal-footer">
+                                        <a href="https://wa.me/919173192360?text=Hi%20Dhruv,%20I%20would%20like%20to%20view%20your%20portfolio%20case%20studies.%20Could%20you%20please%20share%20the%20password?"
+                                                target="_blank" class="whatsapp-btn hover-trigger">
+                                                <i class="ri-whatsapp-line"></i> Ask for Password
+                                        </a>
+                                </div>
+                        </div>
+                </div>
+
+                <!-- Main Footer with Login -->
+                <footer class="site-footer">
+                        <div class="footer-content">
+                                <p>&copy; 2024 Dhruv Panchal. All Rights Reserved.</p>
+                                <button onclick="openLoginModal()" class="admin-login-link hover-trigger">Admin
+                                        Login</button>
+                        </div>
+                </footer>
+
+                <!-- Login Modal -->
+                <div id="login-modal" class="password-modal" style="z-index: 2100;">
+                        <div class="modal-content">
+                                <h3 class="modal-title">Sign In</h3>
+                                <p class="modal-desc">Enter your credentials to access the portfolio manager.</p>
+
+                                <div class="form-group">
+                                        <input type="email" id="login-email" class="form-input hover-trigger"
+                                                placeholder=" " autocomplete="off">
+                                        <label for="login-email" class="form-label">Email Address</label>
+                                </div>
+
+                                <div class="form-group" style="margin-bottom: 2rem;">
+                                        <input type="password" id="login-pass" class="form-input hover-trigger"
+                                                placeholder=" " autocomplete="off">
+                                        <label for="login-pass" class="form-label">Password</label>
+                                </div>
+
+                                <div class="modal-actions">
+                                        <button onclick="handleLogin()" class="submit-btn hover-trigger"
+                                                style="width: 100%;">Login</button>
+                                        <button onclick="closeLoginModal()" class="cv-link hover-trigger"
+                                                style="border: none; background: none; font-size: 0.8rem; margin-top: 1rem;">Cancel</button>
+                                </div>
+                        </div>
+                </div>
+
+                <!-- Admin Dashboard (Overlay) -->
+                <div id="admin-dashboard" class="admin-dashboard" style="display: none;">
+                        <div class="dashboard-header">
+                                <h3>Admin Controls</h3>
+                                <button onclick="AuthManager.logout()">Logout</button>
+                        </div>
+
+                        <div class="dashboard-section">
+                                <h4>User 2 (VIP) Password</h4>
+                                <div class="input-row">
+                                        <input type="text" id="vip-pass-input" placeholder="New Password">
+                                        <button onclick="updateVIPPassword()">Update</button>
+                                </div>
+                        </div>
+
+                        <div class="dashboard-section">
+                                <h4>Global Access Password</h4>
+                                <div class="input-row">
+                                        <input type="text" id="common-pass-input" placeholder="New Common Password">
+                                        <button onclick="updateCommonPassword()">Update</button>
+                                </div>
+                        </div>
+
+                        <div class="dashboard-section">
+                                <h4>Project Access Control</h4>
+                                <div class="project-list" id="admin-project-list">
+                                        <!-- Populated by JS -->
+                                </div>
+                        </div>
+
+                        <button class="close-dash"
+                                onclick="document.getElementById('admin-dashboard').style.display='none'">Close
+                                Panel</button>
+                </div>
+        </main>
+
+
+        <!-- Sound Permission Modal -->
+        <div id="sound-modal" class="sound-modal-overlay">
+                <div class="sound-modal-content">
+                        <h3 class="sound-modal-title">Experience with Sound?</h3>
+                        <p class="sound-modal-desc">Enhance your journey with immersive audio effects. <br>Recommended
+                                for the best experience.</p>
+                        <div class="sound-options">
+                                <button class="sound-btn yes hover-trigger"
+                                        onclick="SoundManager.setPreference('yes')">Yes (Enable)</button>
+                                <button class="sound-btn no hover-trigger" onclick="SoundManager.setPreference('no')">No
+                                        (Mute)</button>
+                        </div>
+                </div>
+        </div>
+
+        <script src="auth.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>

@@ -36,17 +36,29 @@
     box-sizing: border-box;
     cursor: none;
     /* Custom Cursor enabled */
+
+    /* iOS Tap Highlight Removal */
+    -webkit-tap-highlight-color: transparent;
 }
 
-html,
+html {
+    /* Prevent text inflation on rotation */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
 body {
     width: 100%;
+    /* Use dvh for mobile browsers */
     min-height: 100vh;
+    min-height: 100dvh;
     background-color: var(--color-bg);
     color: var(--color-text);
     font-family: var(--font-body);
     font-weight: 300;
     overflow-x: hidden;
+    position: relative;
+    /* strictly contain */
     -webkit-font-smoothing: antialiased;
 }
 
@@ -138,6 +150,8 @@ body {
    ========================================= */
 .hero-wrapper {
     min-height: 100vh;
+    min-height: 100dvh;
+    /* iOS Fix */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -171,6 +185,8 @@ body {
     color: var(--color-text);
     margin-left: -0.8vw;
     /* Optical alignment */
+    opacity: 0;
+    /* Intiially Hidden for JS Reveal */
 }
 
 .hero-title .line {
@@ -192,6 +208,8 @@ body {
     color: var(--color-muted);
     max-width: 400px;
     line-height: 1.6;
+    opacity: 0;
+    /* Intiially Hidden for JS Reveal */
 }
 
 /* =========================================
@@ -487,6 +505,8 @@ body {
 .inquiry-section {
     padding: 15rem var(--padding-page) 5rem;
     min-height: 100vh;
+    min-height: 100dvh;
+    /* iOS Fix */
 }
 
 .inquiry-title {
@@ -617,13 +637,80 @@ body {
         font-size: 10vw;
     }
 
+    /* Mobile Navigation - Floating Bottom Bar */
     .nav-bar {
-        display: none;
-        /* Add Custom Mobile Menu Later */
+        position: fixed;
+        top: auto;
+        bottom: 2rem;
+        /* Safe Area for iOS Home Indicator */
+        bottom: calc(2rem + env(safe-area-inset-bottom));
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        background: rgba(10, 10, 10, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        gap: 2rem;
+        z-index: 9999;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+        /* Prevent width issues */
+        max-width: 90vw;
+        width: auto;
+    }
+
+    .nav-link {
+        font-size: 0.85rem;
+        padding-bottom: 0;
+        opacity: 0.8;
+    }
+
+    .nav-link:hover {
+        opacity: 1;
+    }
+
+    /* Adjust Sections for Mobile */
+    .about-section,
+    .process-section,
+    .work-section,
+    .inquiry-section {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }
 
     .inquiry-title {
         font-size: 15vw;
+    }
+
+    /* Disable "Dim Others" on Mobile to prevent sticky hover */
+    .work-list:hover .work-item {
+        opacity: 1;
+    }
+
+    .work-item:hover {
+        opacity: 1;
+    }
+}
+
+/* Fix for Hover on Touch Devices */
+@media (hover: none) {
+    .work-list:hover .work-item {
+        opacity: 1;
+    }
+
+    .cursor-dot,
+    .cursor-circle {
+        display: none;
+        /* Hide custom cursor on touch */
+    }
+
+    * {
+        cursor: auto !important;
+        /* Restore default cursor */
     }
 }
 
@@ -688,6 +775,29 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: #25D366;
+    color: #fff;
+    text-decoration: none;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    border-radius: 4px;
+    /* Slight round */
+    transition: transform 0.3s;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-2px);
+    background: #20BD5A;
 }
 
 /* =========================================
@@ -882,6 +992,35 @@ body {
     border-color: var(--color-accent);
 }
 
+/* Case Footer Navigation */
+.case-footer-nav {
+    display: flex;
+    justify-content: center;
+    padding: 6rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 1rem;
+    border: 1px solid var(--color-border);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+
+.back-link:hover {
+    background: var(--color-text);
+    color: var(--color-bg);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .case-title {
@@ -932,4 +1071,327 @@ body {
     padding: 10rem 0;
     text-align: center;
     border-top: 1px solid var(--color-border);
+}
+
+/* =========================================
+   12. ADMIN DASHBOARD & LOGIN
+   ========================================= */
+.admin-dashboard {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px;
+    background: #0a0a0a;
+    border: 1px solid var(--color-accent);
+    padding: 2rem;
+    z-index: 10000;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    cursor: auto !important;
+    /* Ensure default cursor is visible */
+}
+
+/* Ensure password modal also has default cursor */
+.password-modal .modal-content {
+    cursor: auto !important;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.dashboard-header h3 {
+    font-family: var(--font-heading);
+    color: var(--color-text);
+    margin: 0;
+}
+
+.dashboard-header button {
+    background: #333;
+    border: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-mono);
+    cursor: pointer;
+}
+
+.dashboard-section {
+    margin-bottom: 2rem;
+}
+
+.dashboard-section h4 {
+    font-family: var(--font-mono);
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.input-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.input-row input {
+    flex: 1;
+    background: #111;
+    border: 1px solid #333;
+    padding: 0.8rem;
+    color: #fff;
+    font-family: var(--font-mono);
+}
+
+.input-row button {
+    background: var(--color-accent);
+    color: var(--color-bg);
+    border: none;
+    padding: 0 1.5rem;
+    font-family: var(--font-heading);
+    cursor: pointer;
+}
+
+/* Project Toggle List */
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #222;
+    padding: 0.5rem;
+}
+
+.project-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background: #111;
+}
+
+.project-row span {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: #ccc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 70%;
+}
+
+.project-row button {
+    background: none;
+    border: 1px solid #333;
+    padding: 0.2rem 0.5rem;
+    color: #aaa;
+    font-size: 0.7rem;
+    cursor: pointer;
+}
+
+.project-row.locked button {
+    border-color: red;
+    color: red;
+}
+
+.project-row.unlocked button {
+    border-color: green;
+    color: green;
+}
+
+.close-dash {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    border: 1px solid #333;
+    color: #666;
+    cursor: pointer;
+}
+
+/* =========================================
+   13. FOOTER
+   ========================================= */
+.site-footer {
+    padding: 2rem var(--padding-page);
+    border-top: 1px solid var(--color-border);
+    margin-top: 5rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--color-muted);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-login-link {
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.admin-login-link:hover {
+    color: var(--color-text);
+}
+
+/* =========================================
+   14. RESPONSIVE DASHBOARD
+   ========================================= */
+@media (max-width: 768px) {
+    .site-footer {
+        padding-bottom: 6rem;
+        /* Space for bottom nav */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .admin-dashboard {
+        width: 95%;
+        padding: 1.5rem;
+        max-height: 85vh;
+    }
+
+    .dashboard-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .input-row {
+        flex-direction: column;
+    }
+
+    .input-row button {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .project-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .project-row button {
+        align-self: flex-end;
+    }
+}
+
+/* =========================================
+   13. SOUND PERMISSION MODAL
+   ========================================= */
+.sound-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 20000;
+    /* Highest priority */
+    display: none;
+    /* Hidden by default, toggled by JS */
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    cursor: auto !important;
+    /* Force System Cursor */
+}
+
+.sound-modal-content {
+    background: #0a0a0a;
+    border: 1px solid var(--color-accent);
+    padding: 3rem;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 0 50px rgba(212, 59, 33, 0.2);
+    animation: modalFadeIn 0.8s ease-out;
+    cursor: auto !important;
+    /* Force System Cursor */
+}
+
+.sound-modal-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.sound-modal-desc {
+    font-family: var(--font-mono);
+    color: #888;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.sound-options {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.sound-btn {
+    padding: 1rem 2.5rem;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-size: 1rem;
+    cursor: pointer !important;
+    /* Force Pointer */
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    letter-spacing: 1px;
+}
+
+/* Option 1: Yes (Highlighted) */
+.sound-btn.yes {
+    background: var(--color-accent);
+    color: var(--color-bg);
+    border: 1px solid var(--color-accent);
+    box-shadow: 0 0 20px rgba(212, 59, 33, 0.4);
+}
+
+.sound-btn.yes:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(212, 59, 33, 0.6);
+}
+
+/* Option 2: No (Low emphasis) */
+.sound-btn.no {
+    background: transparent;
+    color: #666;
+    border: 1px solid #333;
+}
+
+.sound-btn.no:hover {
+    border-color: #666;
+    color: var(--color-text);
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
