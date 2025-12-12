@@ -37,7 +37,7 @@
         <span id="user-badge" class="nav-link user-badge"
             style="display:none; color: var(--color-accent); font-weight: bold; margin-right: auto;"></span>
         <a href="#work" class="nav-link hover-trigger">Work</a>
-        <a href="#about-me" class="nav-link hover-trigger">Profile</a>
+        <a href="#about" class="nav-link hover-trigger">Profile</a>
         <a href="#inquiry" class="nav-link hover-trigger">Connect</a>
     </nav>
 
@@ -50,9 +50,9 @@
                 <span class="line"><span class="word">Panchal</span></span>
             </h1>
             <div class="hero-subtitle">
-                <p>UI/UX DESIGNER • USABILITY SPECIALIST • UI DEVELOPER</p>
+                <p>UI/UX DESIGNER • USABILITY SPECIALIST • FRONT-END DEV</p>
                 <br>
-                <p>Based in India.</p>
+                <p>Based in India. Available for freelance.</p>
             </div>
         </section>
 
@@ -182,10 +182,12 @@
                 <div class="tools-list">
                     <span class="tool-tag">Figma</span>
                     <span class="tool-tag">Adobe XD</span>
+                    <span class="tool-tag">Principle</span>
                     <span class="tool-tag">Framer</span>
+                    <span class="tool-tag">Zeplin</span>
+                    <span class="tool-tag">HTML5/CSS3</span>
+                    <span class="tool-tag">JavaScript</span>
                     <span class="tool-tag">Webflow</span>
-                    <span class="tool-tag">Adobe Photoshop</span>
-                    <span class="tool-tag">Adobe Illustrator</span>
                 </div>
             </div>
         </section>
@@ -266,16 +268,16 @@
         <!-- Marquee (Continuous Motion) -->
         <section id="about" class="marquee-container">
             <div style="white-space: nowrap;">
-                <span class="marquee-text"> Visual Design • User Experience • UI Development • Branding • Strategy
+                <span class="marquee-text">User Experience • Visual Design • Frontend Development • Branding • Strategy
                     •&nbsp;</span>
-                <span class="marquee-text">Visual Design • User Experience • UI Development • Branding • Strategy
+                <span class="marquee-text">User Experience • Visual Design • Frontend Development • Branding • Strategy
                     •&nbsp;</span>
             </div>
         </section>
 
         <!-- Inquiry Section -->
         <section id="inquiry" class="inquiry-section">
-            <h2 class="inquiry-title">Let's <br>Connect</h2>
+            <h2 class="inquiry-title">Start a Project</h2>
 
             <form id="contact-form" onsubmit="sendEmail(event)">
                 <div class="form-group">
@@ -302,7 +304,7 @@
 
                     <!-- Primary Buttons Row -->
                     <div class="primary-actions" style="display: flex; gap: 2rem; flex-wrap: wrap;">
-                        <button type="submit" class="submit-btn hover-trigger"><i class="ri-mail-line"></i>Send Email</button>
+                        <button type="submit" class="submit-btn hover-trigger">Send Inquiry</button>
 
                         <a href="https://wa.me/919173192360" target="_blank" class="submit-btn hover-trigger">
                             <i class="ri-whatsapp-line"></i> WhatsApp
@@ -355,7 +357,11 @@
     <footer class="site-footer">
         <div class="footer-content">
             <p>&copy; 2024 Dhruv Panchal. All Rights Reserved.</p>
-            <button onclick="openLoginModal()" class="admin-login-link hover-trigger">Admin Login</button>
+            <div class="footer-controls" style="display: flex; gap: 1.5rem; align-items: center;">
+                <button id="sound-toggle" onclick="SoundManager.toggleSound()"
+                    class="admin-login-link hover-trigger">Sound: Off</button>
+                <button onclick="openLoginModal()" class="admin-login-link hover-trigger">Admin Login</button>
+            </div>
         </div>
     </footer>
 
