@@ -209,7 +209,7 @@ body {
 .hero-subtitle {
     font-family: var(--font-mono);
     margin-top: 3rem;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     color: var(--color-muted);
     max-width: 400px;
     line-height: 1.6;
@@ -375,37 +375,52 @@ body {
     border-top: 1px dashed #333;
 }
 
-/* Tools Section */
-.tools-section {
-    margin-top: 8rem;
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4rem;
+    border-top: 1px solid var(--color-border);
+    padding-top: 4rem;
 }
 
-.tools-title {
-    font-family: var(--font-mono);
-    font-size: 1rem;
-    color: var(--color-muted);
+.category-title {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--color-text);
     margin-bottom: 2rem;
     text-transform: uppercase;
 }
 
-.tools-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+.skill-list {
+    list-style: none;
+    padding: 0;
 }
 
-.tool-tag {
-    border: 1px solid var(--color-border);
-    padding: 0.8rem 1.5rem;
-    font-family: var(--font-heading);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    transition: all 0.3s;
+.skill-list li {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    color: var(--color-muted);
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    transition: color 0.3s;
 }
 
-.tool-tag:hover {
-    background: var(--color-accent);
-    color: var(--color-bg);
+.skill-list li::before {
+    content: '+';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    opacity: 0.5;
+}
+
+.skill-list li:hover {
+    color: var(--color-text);
+}
+
+.skill-list li:hover::before {
+    opacity: 1;
 }
 
 /* Responsive */
@@ -838,16 +853,26 @@ body {
 
 /* Hero */
 .case-hero {
-    padding: 15rem var(--padding-page) 5rem;
+    padding: 5rem var(--padding-page) 5rem;
     border-bottom: 1px solid var(--color-border);
 }
 
 .case-title {
     font-family: var(--font-heading);
-    font-size: 8vw;
-    text-transform: uppercase;
-    line-height: 0.9;
+    font-size: 4vw;
+    /* Increased from 4vw for better impact */
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    max-width: 90%;
+}
+
+.case-subtitle {
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    color: var(--color-muted);
     margin-bottom: 4rem;
+    line-height: 1.4;
+    max-width: 800px;
 }
 
 .case-meta {
@@ -894,19 +919,29 @@ body {
 }
 
 /* Case Study Images */
-.case-image-container {
+.case-image-wrapper {
     margin: 4rem 0;
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    /* Allow captions */
 }
 
-.case-image {
+.case-image,
+.case-main-image,
+.case-image-full {
     max-width: 100%;
     height: auto;
     border: 1px solid var(--color-border);
     border-radius: 4px;
     background: rgba(255, 255, 255, 0.02);
+}
+
+.wireframe-invert {
+    filter: invert(1) hue-rotate(180deg) grayscale(100%);
+    mix-blend-mode: exclusion;
+    /* Ensures smooth blend */
 }
 
 /* Highlight Box */
@@ -963,14 +998,31 @@ body {
 .stat-value {
     display: block;
     font-family: var(--font-heading);
-    font-size: 3rem;
     color: var(--color-accent);
     margin-bottom: 0.5rem;
     text-transform: uppercase;
-    word-break: break-all;
-    /* Prevent overflow */
-    font-size: 2.5rem;
-    /* Slightly smaller to fit "ABSORBED" */
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    word-break: break-word;
+    /* Ensure wrapping if still too long */
+    hyphens: auto;
+}
+
+.subsection-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--color-text);
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.step-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--color-text);
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
 }
 
 .stat-desc {

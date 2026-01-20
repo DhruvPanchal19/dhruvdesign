@@ -24,7 +24,7 @@ const AuthManager = {
         // Project Specific Locks (true = locked/password required for public)
         projects: {
             'casestudies/case-study-design-system.html': { locked: true },
-            'casestudies/case-study-support-chat.html': { locked: true },
+
             'casestudies/case-study-smart-university.html': { locked: true },
             'casestudies/case-study-macro.html': { locked: true },
             'casestudies/case-study-esign-app.html': { locked: true },

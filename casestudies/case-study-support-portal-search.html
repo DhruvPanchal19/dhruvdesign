@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Portal Search - Case Study</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syncopate:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Lenis -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Nav -->
+    <div class="back-link-container">
+        <a href="../index.html#work" class="back-link hover-trigger">
+            <i class="ri-arrow-left-line"></i> Back to Work
+        </a>
+    </div>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-circle"></div>
+
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <main id="main-content">
+
+        <!-- Hero -->
+        <header class="case-hero">
+            <h1 class="case-title">Made it faster and easier for users to find support documents.</h1>
+            <p class="case-subtitle">Redesigned knowledge base search to improve usability, speed, and accuracy</p>
+
+            <div class="case-meta">
+                <div class="meta-item">
+                    <span class="label">Role</span>
+                    <span class="value">UI/UX Designer & UI Developer</span>
+                </div>
+                <div class="meta-item">
+                    <span class="label">Duration</span>
+                    <span class="value">1 Month</span>
+                </div>
+                <div class="meta-item">
+                    <span class="label">Output</span>
+                    <span class="value">AI-powered Search Interface</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="case-image-wrapper">
+            <img src="../case-study-img/ai-search/aisearch-ss.jpg" alt="Support Portal Search UI"
+                class="case-main-image">
+        </div>
+
+        <!-- Content Structure -->
+        <article class="case-content">
+
+            <!-- 1. Problem Statement -->
+            <section class="case-section">
+                <h2 class="section-heading">Problem Statement</h2>
+                <p class="body-text">
+                    Users struggled to find or verify information in the support portal’s large knowledge base unless
+                    they already knew the exact document name or path. If users couldn’t find what they needed, they had
+                    to contact their Strategic Account Manager (SAM) or open a support ticket.
+                </p>
+            </section>
+
+            <!-- 2. Validation (WHY) -->
+            <section class="case-section">
+                <h2 class="section-heading">Why this mattered</h2>
+                <p class="body-text">This was a real problem because:</p>
+                <ul class="clean-list">
+                    <li>Most users didn’t know the exact document titles or locations.</li>
+                    <li>Search was frustrating, slow, and often led to dead ends.</li>
+                    <li>Users wasted time, or abandoned self-service, increasing pressure on SAMs and support teams.
+                    </li>
+                    <li>Every ticket raised for basic information created extra workload and slowed down resolution for
+                        everyone.</li>
+                </ul>
+            </section>
+
+            <!-- 3. Hypothesis -->
+            <section class="case-section">
+                <h2 class="section-heading">Hypothesis</h2>
+
+                <h3 class="subsection-title">What we concluded</h3>
+                <ul class="clean-list">
+                    <li>The main problem was strict search that relied on exact matches.</li>
+                    <li>Users needed a search that understood intent, not just keywords.</li>
+                    <li>The UI made it hard to skim or filter results.</li>
+                </ul>
+
+                <br>
+
+                <h3 class="subsection-title">What we did</h3>
+                <ul class="clean-list">
+                    <li>Integrated AI-powered, semantic search to deliver more human results.</li>
+                    <li>Redesigned the search UI for faster scanning and easier filtering.</li>
+                    <li><strong>Result:</strong> Users could find what they needed in under 30 seconds instead of 5
+                        minutes or more.</li>
+                </ul>
+            </section>
+
+
+            <!-- 4. Process -->
+            <section class="case-section">
+                <h2 class="section-heading">Process</h2>
+
+                <h3 class="step-title">Explore</h3>
+                <p class="body-text">
+                    Looked at options: keyword-only search, advanced filters, and AI/semantic search. Explored different
+                    layouts: list, card, and grouped results.
+                </p>
+
+                <h3 class="step-title">Iterate</h3>
+                <p class="body-text">
+                    Tested card and list views. Card view took up too much space, made skimming slower. List view with
+                    highlights worked best. Tried adding too many filters—users got overwhelmed. Kept only the most
+                    useful ones.
+                </p>
+
+                <h3 class="step-title">Implement</h3>
+                <p class="body-text">
+                    Went with a clean list layout, with key info and highlights. Added a “Did you mean” feature for
+                    mistyped queries and integrated semantic AI search to handle broad, natural questions. Worked under
+                    a tight 1-month timeline and with legacy data structures.
+                </p>
+            </section>
+
+            <!-- 5. Screenshots -->
+            <section class="case-section">
+                <h2 class="section-heading">Screenshots & Notes</h2>
+
+                <!-- Notes on Old Search (No image available, just text) -->
+                <div class="highlight-box">
+                    <p class="highlight-text"><strong>Old Search Page (Context):</strong> Previously, filters were
+                        cluttered, there were no suggested results, and it relied on strict keyword matching. Users had
+                        to know exact titles or paths.</p>
+                </div>
+                <br>
+
+                <div class="case-image-wrapper">
+                    <img src="../case-study-img/ai-search/aisearch-ss-2.jpg" alt="New Search Page"
+                        class="case-image-full">
+                    <p class="image-caption"><strong>New Search Page:</strong> Clean list view, "Did you mean"
+                        suggestions, humanized summaries, and highlighted keywords. Users can search in plain language
+                        and scan results quickly.</p>
+                </div>
+
+                <div class="case-image-wrapper">
+                    <img src="../case-study-img/ai-search/aisearch-ss.jpg" alt="AI Powered Results"
+                        class="case-image-full">
+                    <p class="image-caption"><strong>AI-Powered Results:</strong> User asks a question, system returns
+                        the most relevant answers, not just keyword matches. Demonstrates improved matching and
+                        usability.</p>
+                </div>
+            </section>
+
+
+            <!-- 6. Solution -->
+            <section class="case-section">
+                <h2 class="section-heading">Final Solution</h2>
+                <ul class="clean-list">
+                    <li>Switched to a smarter, AI-powered search that understands user questions, not just keywords.
+                    </li>
+                    <li>Reduced clutter and made the search results easier to scan and filter.</li>
+                    <li>Added suggestions and highlights to guide users.</li>
+                    <li>Users now find what they need in less than 30 seconds, down from 5 minutes or more.</li>
+                    <li>Fewer support tickets for basic document requests.</li>
+                </ul>
+            </section>
+
+            <!-- 7. Impact -->
+            <section class="case-section">
+                <h2 class="section-heading">Impact & Learnings</h2>
+                <ul class="clean-list">
+                    <li>Users got answers faster and with less frustration.</li>
+                    <li>Fewer tickets raised for “can’t find document” issues.</li>
+                    <li>SAMs had more time for complex support, not basic queries.</li>
+                </ul>
+                <br>
+                <p class="body-text">
+                    <strong>Design learning:</strong> Cutting extra filters and focusing on a clear result list made a
+                    bigger difference than adding more features.
+                </p>
+                <p class="body-text">
+                    <strong>What I’d improve next time:</strong> Would run more quick usability tests early to fine-tune
+                    search suggestions before launch.
+                </p>
+            </section>
+
+        </article>
+
+        <!-- Footer Nav -->
+        <div class="case-footer-nav">
+            <a href="../index.html#work" class="back-link hover-trigger">
+                <i class="ri-arrow-left-line"></i> Back to Work
+            </a>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="nav-bar">
+            <a href="../index.html" class="nav-link hover-trigger">Home</a>
+            <a href="../index.html#work" class="nav-link hover-trigger">Work</a>
+            <a href="../index.html#about" class="nav-link hover-link">Profile</a>
+            <a href="../index.html#inquiry" class="nav-link hover-trigger">Connect</a>
+        </nav>
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="../script.js"></script>
+</body>
+
+</html>

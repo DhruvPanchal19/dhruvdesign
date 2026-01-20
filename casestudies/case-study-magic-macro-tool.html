@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Macro Tool - Case Study</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syncopate:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Lenis -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
+
+    <style>
+        .placeholder-image {
+            width: 100%;
+            height: 400px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-family: var(--font-mono);
+            border: 1px dashed #ccc;
+            margin-bottom: 1rem;
+        }
+
+        .placeholder-text {
+            text-align: center;
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Nav -->
+    <div class="back-link-container">
+        <a href="../index.html#work" class="back-link hover-trigger">
+            <i class="ri-arrow-left-line"></i> Back to Work
+        </a>
+    </div>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-circle"></div>
+
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <main id="main-content">
+
+        <!-- Hero -->
+        <header class="case-hero">
+            <h1 class="case-title">Created a magic macro tool to help users send repeat messages faster.</h1>
+            <p class="case-subtitle">Redesigned messaging experience to reduce repetitive typing and save time for all
+                internal users.</p>
+
+            <div class="case-meta">
+                <div class="meta-item">
+                    <span class="label">Role</span>
+                    <span class="value">UI/UX Designer & UI Developer</span>
+                </div>
+                <div class="meta-item">
+                    <span class="label">Duration</span>
+                    <span class="value">Ongoing</span>
+                </div>
+                <div class="meta-item">
+                    <span class="label">Output</span>
+                    <span class="value">Macro Tool Integrated</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- 1. Problem Statement -->
+        <article class="case-content">
+            <section class="case-section">
+                <h2 class="section-heading">Problem Statement</h2>
+                <p class="body-text">
+                    Users had to write the same text messages over and over. This was slow and wasted time for everyone,
+                    from the support team to leadership.
+                </p>
+            </section>
+
+            <!-- 2. Validation (WHY) -->
+            <section class="case-section">
+                <h2 class="section-heading">Why this mattered</h2>
+                <p class="body-text">Writing the same content repeatedly is a poor use of time and causes frustration.
+                </p>
+                <ul class="clean-list">
+                    <li>Support agents could make mistakes copying text.</li>
+                    <li>It slowed down responses, especially for high-volume teams.</li>
+                    <li>Leaders also had to repeat themselves, which reduced their efficiency.</li>
+                </ul>
+                <p class="body-text" style="margin-top: 1rem;">Overall, this was a clear waste for the business and
+                    affected everyone’s productivity.</p>
+            </section>
+
+            <!-- 3. Hypothesis -->
+            <section class="case-section">
+                <h2 class="section-heading">Hypothesis</h2>
+
+                <h3 class="subsection-title">What we concluded</h3>
+                <p class="body-text">
+                    The main problem was manual, repetitive typing. People needed a way to use saved messages with quick
+                    edits (like names or custom fields).
+                </p>
+
+                <br>
+
+                <h3 class="subsection-title">What we did</h3>
+                <ul class="clean-list">
+                    <li>Designed and built a magic macro tool.</li>
+                    <li>Now, users can save paragraphs as shortcuts and add changeable fields.</li>
+                    <li>Each time, they just pick the macro, fill in the blanks, and send—no more full retyping.</li>
+                </ul>
+            </section>
+
+
+            <!-- 4. Process -->
+            <section class="case-section">
+                <h2 class="section-heading">Process</h2>
+
+                <h3 class="step-title">Explore</h3>
+                <ul class="clean-list">
+                    <li>Looked at existing macro and template tools.</li>
+                    <li>Explored a basic text snippet library vs. a smarter macro with editable fields.</li>
+                </ul>
+
+                <h3 class="step-title">Iterate</h3>
+                <ul class="clean-list">
+                    <li>Rejected plain snippets—they didn’t allow quick changes (like recipient name).</li>
+                    <li>Tested an in-line macro builder: users add variables (e.g., {{name}}) that prompt for input.
+                    </li>
+                    <li>Iterated the UI for fastest access: dropdown in message box, keyboard shortcut, auto-focus on
+                        fields.</li>
+                </ul>
+
+                <h3 class="step-title">Implement</h3>
+                <ul class="clean-list">
+                    <li>Shipped a simple, accessible dropdown to insert macros.</li>
+                    <li>Built a template builder with required fields.</li>
+                </ul>
+
+                <h3 class="step-title">Constraints</h3>
+                <ul class="clean-list">
+                    <li>Legacy messaging system meant some features (like drag-and-drop macros) were out of scope.</li>
+                    <li>No research phase—had to move fast.</li>
+                    <li>Some UI polish was deferred for speed.</li>
+                </ul>
+            </section>
+
+            <!-- 5. Screenshots -->
+            <section class="case-section">
+                <h2 class="section-heading">Screenshots & Notes</h2>
+
+                <!-- 1. Old Message Box -->
+                <div class="case-image-wrapper">
+                    <div class="placeholder-image">
+                        <div class="placeholder-text">[Screenshot: Old message box]</div>
+                    </div>
+                    <p class="image-caption"><strong>Old message box:</strong> Shows long, repeated typed messages.
+                        Shows wasted effort and chance for error.</p>
+                </div>
+
+                <!-- 2. Macro tool dropdown -->
+                <div class="case-image-wrapper">
+                    <div class="placeholder-image">
+                        <div class="placeholder-text">[Screenshot: Macro tool dropdown]</div>
+                    </div>
+                    <p class="image-caption"><strong>Macro tool dropdown:</strong> List of saved macros above message
+                        box. User can quickly select the right message.</p>
+                </div>
+
+                <!-- 3. Macro editor -->
+                <div class="case-image-wrapper">
+                    <div class="placeholder-image">
+                        <div class="placeholder-text">[Screenshot: Macro editor]</div>
+                    </div>
+                    <p class="image-caption"><strong>Macro editor:</strong> User creates or edits macros with fill-in
+                        fields (like {{name}}, {{issue}}). Shows control over templates and field variables.</p>
+                </div>
+
+                <!-- 4. Macro applied -->
+                <div class="case-image-wrapper">
+                    <div class="placeholder-image">
+                        <div class="placeholder-text">[Screenshot: Macro applied]</div>
+                    </div>
+                    <p class="image-caption"><strong>Macro applied:</strong> Fields auto-populated, user fills in the
+                        rest. Reduces typing and speeds up final message.</p>
+                </div>
+
+            </section>
+
+
+            <!-- 6. Solution -->
+            <section class="case-section">
+                <h2 class="section-heading">Final Solution</h2>
+                <p class="body-text">Added a magic macro dropdown to the message area.</p>
+                <ul class="clean-list">
+                    <li>Users select a macro, fill in required fields, and the full message appears ready to send.</li>
+                    <li>No more retyping; fewer errors; faster for everyone.</li>
+                    <li>The tool became popular across teams, not just support.</li>
+                </ul>
+            </section>
+
+            <!-- 7. Impact -->
+            <section class="case-section">
+                <h2 class="section-heading">Impact & Learnings</h2>
+
+                <h3 class="subsection-title">Directional Impact</h3>
+                <ul class="clean-list">
+                    <li>Most users saved 80–90% of the time per repeated message.</li>
+                    <li>Fewer mistakes in copy/paste.</li>
+                    <li>Faster support responses and internal communications.</li>
+                </ul>
+                <br>
+
+                <h3 class="subsection-title">Design Learning</h3>
+                <ul class="clean-list">
+                    <li>People want speed but also control—letting users add fields to macros made the tool much more
+                        useful.</li>
+                </ul>
+
+                <br>
+
+                <h3 class="subsection-title">What to improve next time</h3>
+                <ul class="clean-list">
+                    <li>Add analytics to track macro usage and catch friction points.</li>
+                    <li>Make it easier to share macros between teams.</li>
+                </ul>
+            </section>
+
+        </article>
+
+        <!-- Footer Nav -->
+        <div class="case-footer-nav">
+            <a href="../index.html#work" class="back-link hover-trigger">
+                <i class="ri-arrow-left-line"></i> Back to Work
+            </a>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="nav-bar">
+            <a href="../index.html" class="nav-link hover-trigger">Home</a>
+            <a href="../index.html#work" class="nav-link hover-trigger">Work</a>
+            <a href="../index.html#about" class="nav-link hover-link">Profile</a>
+            <a href="../index.html#inquiry" class="nav-link hover-trigger">Connect</a>
+        </nav>
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="../script.js"></script>
+</body>
+
+</html>

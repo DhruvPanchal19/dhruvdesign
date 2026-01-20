@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magic Macro Tool | Case Study</title>
+    <title>NOC Dashboard - Case Study | Dhruv Panchal</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +28,7 @@
     <!-- Nav -->
     <div class="back-link-container">
         <a href="../index.html#work" class="back-link hover-trigger">
-            <i class="ri-arrow-left-line"></i> Back to Works
+            <i class="ri-arrow-left-line"></i> Back to Work
         </a>
     </div>
     <!-- Custom Cursor -->
@@ -42,114 +42,208 @@
 
         <!-- Hero -->
         <header class="case-hero">
-            <h1 class="case-title">Magic Macro Tool</h1>
+            <h1 class="case-title">Designed a unified alert dashboard so NOC teams could see and respond to outages
+                faster.</h1>
+            <p class="case-subtitle">Redesigned the monitoring experience to improve clarity, reduce turn-around time,
+                and make outage handling smoother.</p>
+
             <div class="case-meta">
                 <div class="meta-item">
                     <span class="label">Role</span>
-                    <span class="value">UX Strategy & Dev</span>
+                    <span class="value">UI/UX Designer & UI Developer</span>
                 </div>
                 <div class="meta-item">
-                    <span class="label">Context</span>
-                    <span class="value">Internal Workflow</span>
+                    <span class="label">Duration</span>
+                    <span class="value">Multi-month Project</span>
                 </div>
                 <div class="meta-item">
-                    <span class="label">Year</span>
-                    <span class="value">2023</span>
+                    <span class="label">Output</span>
+                    <span class="value">NOC Alert Dashboard & Detail Screens</span>
                 </div>
             </div>
         </header>
 
+        <div class="case-image-wrapper">
+            <!-- Placeholder for Hero Image -->
+            <div
+                style="width: 100%; height: 400px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-border);">
+                <span style="font-family: var(--font-mono); color: var(--color-muted);">[Main Dashboard Hero
+                    Image]</span>
+            </div>
+        </div>
+
         <!-- Content Structure -->
         <article class="case-content">
 
-            <!-- Overview -->
+            <!-- 1. Problem Statement -->
             <section class="case-section">
-                <h2 class="section-heading">Strategic UX Narrative</h2>
+                <h2 class="section-heading">Problem Statement</h2>
                 <p class="body-text">
-                    When I joined the workflow optimization initiative for eManager, I quickly noticed a silent but
-                    costly pattern — internal teams were manually typing or copy-pasting the same long descriptions,
-                    email responses, and escalation summaries dozens of times a day. This wasn’t just a minor UX
-                    inefficiency — the repetition was consuming decision time, slowing critical escalations, and
-                    beginning to threaten SLA commitments.
+                    When a server outage happened, NOC team members couldn’t efficiently identify outages and root
+                    causes
+                    from a single monitoring screen. They had to check Azure, Datadog, ServiceNow, and internal portals
+                    separately. This increased turn-around time and made incident response slower.
                 </p>
             </section>
 
-            <!-- Problem -->
+            <!-- 2. Validation (WHY) -->
             <section class="case-section">
-                <h2 class="section-heading">The Problem + Context</h2>
-                <p class="body-text">
-                    eManager is our internal operations command center used by support, billing, and leadership teams.
-                    During workflow analysis, we uncovered a hidden operational drag — teams were manually typing or
-                    copy-pasting lengthy text blocks **30+ times a day**, affecting response speed, consistency, and
-                    approaching SLA risk.
-                </p>
-                <div class="highlight-box">
-                    <p class="highlight-text">"This wasn’t a UI issue — it was cognitive and operational debt."</p>
-                </div>
-                <p class="body-text">
-                    The turning point came when productivity metrics surfaced that support and billing agents were
-                    repeating text fragments **30+ times per day**, and in some cases, responses were delayed long
-                    enough to risk SLA targets. This dual pressure — **visible productivity loss + emerging SLA risk** —
-                    made this problem impossible to ignore.
-                </p>
-            </section>
-
-            <!-- Strategy -->
-            <section class="case-section">
-                <h2 class="section-heading">UX Strategy & Decision</h2>
-                <p class="body-text">
-                    Instead of building "text shortcuts," we introduced **Macro Automation — a personal-to-team scalable
-                    response engine**.
-                </p>
+                <h2 class="section-heading">Why this mattered</h2>
+                <p class="body-text">The old process forced team members to jump between 4–5 tools just to figure out
+                    what went wrong. This led to:</p>
                 <ul class="clean-list">
-                    <li><strong>Goal:</strong> Reduce decision friction, not just typing effort.</li>
-                    <li><strong>Approach:</strong> Users start with private macros, publish to team once proven.</li>
-                    <li><strong>Principle:</strong> Designed for trust, speed, zero training.</li>
+                    <li>Delayed response to outages.</li>
+                    <li>Higher risk of missing important alerts.</li>
+                    <li>More errors due to context switching.</li>
+                    <li>Slower documentation of what happened and how it was resolved.</li>
                 </ul>
+                <p class="body-text" style="margin-top: 1rem;">For a 24/7 ops team, this meant longer downtimes and
+                    higher business risk.</p>
+            </section>
+
+            <!-- 3. Hypothesis -->
+            <section class="case-section">
+                <h2 class="section-heading">Hypothesis</h2>
+
+                <h3 class="subsection-title">What we concluded</h3>
                 <p class="body-text">
-                    We didn’t over-engineer it — **no AI in v1, no risky formatting logic**, just fast intent
-                    recognition, clarity, and trust. Because velocity without trust is noisy. Trust without velocity is
-                    useless.
+                    Having to check multiple sources was causing confusion and slowdowns. We needed a single view to
+                    pull
+                    in all relevant alerts and details.
+                </p>
+
+                <br>
+
+                <h3 class="subsection-title">What we did</h3>
+                <p class="body-text">
+                    We designed and built a central alert dashboard. This let NOC managers and team members see alerts
+                    from all sources in one place, act on them directly, and keep track of steps taken—all from a single
+                    window.
                 </p>
             </section>
 
-            <!-- Impact Stats -->
+
+            <!-- 4. Chosen Design Direction & Process -->
             <section class="case-section">
-                <h2 class="section-heading">Impact & Outcomes</h2>
-                <div class="stat-grid">
-                    <div class="stat-card">
-                        <span class="stat-label">Response Time</span>
-                        <span class="stat-value">&lt; 10s</span>
-                        <span class="stat-desc">From 2-3 mins manual crafting</span>
+                <h2 class="section-heading">Design Process</h2>
+
+                <h3 class="step-title">Explore</h3>
+                <ul class="clean-list">
+                    <li>Looked at existing monitoring dashboards and alert tools.</li>
+                    <li>Explored options for combining data from different platforms (Azure, Datadog, ServiceNow, Chef)
+                        into one screen.</li>
+                </ul>
+
+                <h3 class="step-title">Iterate</h3>
+                <ul class="clean-list">
+                    <li>Tested different layouts—table views, timelines, card layouts.</li>
+                    <li>Rejected options that hid too much info or required extra clicks.</li>
+                    <li>Balanced detail with clarity to avoid overwhelming the screen.</li>
+                </ul>
+
+                <h3 class="step-title">Implement</h3>
+                <ul class="clean-list">
+                    <li>Built the dashboard using a modular approach.</li>
+                    <li>Used APIs to fetch data from each source.</li>
+                    <li>Created a detail screen for each alert, showing timeline, related events, and resolution steps.
+                    </li>
+                </ul>
+
+                <h3 class="step-title">Constraints</h3>
+                <ul class="clean-list">
+                    <li>No access to end-users for research due to NDA and security protocols.</li>
+                    <li>Had to use existing backend APIs.</li>
+                    <li>Needed to be usable for both technical and less-technical NOC staff.</li>
+                </ul>
+            </section>
+
+            <!-- 5. Screenshots -->
+            <section class="case-section">
+                <h2 class="section-heading">Screenshots & Notes</h2>
+
+                <!-- 1 -->
+                <div class="case-image-wrapper">
+                    <div
+                        style="width: 100%; height: 300px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-border); margin-bottom: 1rem;">
+                        <span style="font-family: var(--font-mono); color: var(--color-muted);">[Main Dashboard
+                            UI]</span>
                     </div>
-                    <div class="stat-card">
-                        <span class="stat-label">Dependency</span>
-                        <span class="stat-value">Zero</span>
-                        <span class="stat-desc">Self-serve knowledge speed</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-label">SLA Risk</span>
-                        <span class="stat-value">Absorbed</span>
-                        <span class="stat-desc">Escalations accelerated</span>
-                    </div>
+                    <p class="image-caption"><strong>Main Dashboard:</strong> Shows combined alerts from Azure, Datadog,
+                        ServiceNow, and internal tools. Designed to prioritize recent/critical alerts at the top and
+                        uses
+                        clear color coding for severity.</p>
                 </div>
+
+                <!-- 2 -->
+                <div class="case-image-wrapper">
+                    <div
+                        style="width: 100%; height: 300px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-border); margin-bottom: 1rem;">
+                        <span style="font-family: var(--font-mono); color: var(--color-muted);">[Alert Detail UI]</span>
+                    </div>
+                    <p class="image-caption"><strong>Alert Detail Screen:</strong> Shows timeline for a single outage,
+                        root cause, steps taken, and links to related tickets. Focused on reducing steps to find the
+                        root
+                        cause and making documentation easier.</p>
+                </div>
+
+                <!-- 3 -->
+                <div class="case-image-wrapper">
+                    <div
+                        style="width: 100%; height: 300px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-border); margin-bottom: 1rem;">
+                        <span style="font-family: var(--font-mono); color: var(--color-muted);">[Analytics UI]</span>
+                    </div>
+                    <p class="image-caption"><strong>Analytics View:</strong> Shows trends for similar issues, common
+                        root causes, and time-to-resolve metrics. Helps with proactive planning and pattern spotting.
+                    </p>
+                </div>
+
             </section>
 
-            <!-- Innovation -->
+
+            <!-- 6. Solution -->
             <section class="case-section">
-                <h2 class="section-heading">The Next Evolution</h2>
+                <h2 class="section-heading">Final Solution</h2>
                 <p class="body-text">
-                    The best part? This foundation positioned us for **future leverage** — now we can evolve this into
-                    **AI-assisted predictive macros**, where the system suggests the next macro *before* the agent even
-                    thinks of it.
+                    This made it faster and easier for the NOC team to find, understand, and resolve outages. Fewer
+                    clicks, less confusion, faster action.
                 </p>
-                <p class="body-text">
-                    This project didn’t just improve productivity. It **transformed internal execution speed into a
-                    scalable capability**, converting tribal knowledge into consistent institutional intelligence.
-                </p>
+                <ul class="clean-list" style="margin-top: 1rem;">
+                    <li>Combined all major alert sources into one dashboard.</li>
+                    <li>Reduced the need to switch between different tools.</li>
+                    <li>Added detail screens for each alert, with full timeline and resolution steps.</li>
+                    <li>Included basic analytics for trend tracking and reporting.</li>
+                </ul>
+            </section>
+
+            <!-- 7. Impact -->
+            <section class="case-section">
+                <h2 class="section-heading">Impact & Learnings</h2>
+
+                <h3 class="subsection-title">Impact</h3>
+                <ul class="clean-list">
+                    <li>Outage turn-around time dropped (directionally—flow was much smoother).</li>
+                    <li>Fewer missed alerts and handoff mistakes.</li>
+                    <li>Easier documentation and knowledge sharing.</li>
+                    <li>Managers could spot patterns and repeat issues more easily.</li>
+                </ul>
+                <br>
+
+                <h3 class="subsection-title">Learnings</h3>
+                <p class="body-text"><strong>Design learning:</strong> Clarity matters most in high-stress, high-stakes
+                    tools. Every extra click slows people down.</p>
+                <br>
+                <p class="body-text"><strong>What I’d improve next time:</strong> Would add real-time collaboration
+                    features so multiple team members could work together on the same incident screen.</p>
             </section>
 
         </article>
+
+        <!-- Footer Nav -->
+        <div class="case-footer-nav">
+            <a href="../index.html#work" class="back-link hover-trigger">
+                <i class="ri-arrow-left-line"></i> Back to Work
+            </a>
+        </div>
 
         <!-- Navigation -->
         <nav class="nav-bar">
@@ -163,7 +257,7 @@
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="../script.js"></script>
+    <script src="../script.js?v=2"></script>
 </body>
 
 </html>

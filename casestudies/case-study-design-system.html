@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magic Macro Tool | Case Study</title>
+    <title>Design System - Case Study</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +28,7 @@
     <!-- Nav -->
     <div class="back-link-container">
         <a href="../index.html#work" class="back-link hover-trigger">
-            <i class="ri-arrow-left-line"></i> Back to Works
+            <i class="ri-arrow-left-line"></i> Back to Work
         </a>
     </div>
     <!-- Custom Cursor -->
@@ -42,111 +42,187 @@
 
         <!-- Hero -->
         <header class="case-hero">
-            <h1 class="case-title">Magic Macro Tool</h1>
+            <h1 class="case-title">Built a design system for eManager to reduce UI confusion.</h1>
+            <p class="case-subtitle">Redesigned the eManager UI foundation to improve consistency, reduce user effort,
+                and speed up product changes.</p>
+
             <div class="case-meta">
                 <div class="meta-item">
                     <span class="label">Role</span>
-                    <span class="value">UX Strategy & Dev</span>
+                    <span class="value">Product Designer (Design System)</span>
                 </div>
                 <div class="meta-item">
-                    <span class="label">Context</span>
-                    <span class="value">Internal Workflow</span>
+                    <span class="label">Duration</span>
+                    <span class="value">6 Months</span>
                 </div>
                 <div class="meta-item">
-                    <span class="label">Year</span>
-                    <span class="value">2023</span>
+                    <span class="label">Output</span>
+                    <span class="value">Design System & Component Library</span>
                 </div>
             </div>
         </header>
 
+        <div class="case-image-wrapper">
+            <img src="../case-study-img/design-system/designsystem-ss.jpg" alt="Design System Overview"
+                class="case-main-image">
+        </div>
+
         <!-- Content Structure -->
         <article class="case-content">
 
-            <!-- Overview -->
+            <!-- 1. Problem Statement -->
             <section class="case-section">
-                <h2 class="section-heading">Strategic UX Narrative</h2>
+                <h2 class="section-heading">Problem Statement</h2>
                 <p class="body-text">
-                    When I joined the workflow optimization initiative for eManager, I quickly noticed a silent but
-                    costly pattern — internal teams were manually typing or copy-pasting the same long descriptions,
-                    email responses, and escalation summaries dozens of times a day. This wasn’t just a minor UX
-                    inefficiency — the repetition was consuming decision time, slowing critical escalations, and
-                    beginning to threaten SLA commitments.
+                    The eManager product had inconsistent UI patterns, repeated components, and unclear interaction
+                    behavior across screens, which caused confusion for users and slowed down design and development
+                    work.
                 </p>
             </section>
 
-            <!-- Problem -->
+            <!-- 2. Validation (WHY) -->
             <section class="case-section">
-                <h2 class="section-heading">The Problem + Context</h2>
-                <p class="body-text">
-                    eManager is our internal operations command center used by support, billing, and leadership teams.
-                    During workflow analysis, we uncovered a hidden operational drag — teams were manually typing or
-                    copy-pasting lengthy text blocks **30+ times a day**, affecting response speed, consistency, and
-                    approaching SLA risk.
-                </p>
-                <div class="highlight-box">
-                    <p class="highlight-text">"This wasn’t a UI issue — it was cognitive and operational debt."</p>
-                </div>
-                <p class="body-text">
-                    The turning point came when productivity metrics surfaced that support and billing agents were
-                    repeating text fragments **30+ times per day**, and in some cases, responses were delayed long
-                    enough to risk SLA targets. This dual pressure — **visible productivity loss + emerging SLA risk** —
-                    made this problem impossible to ignore.
-                </p>
-            </section>
-
-            <!-- Strategy -->
-            <section class="case-section">
-                <h2 class="section-heading">UX Strategy & Decision</h2>
-                <p class="body-text">
-                    Instead of building "text shortcuts," we introduced **Macro Automation — a personal-to-team scalable
-                    response engine**.
-                </p>
+                <h2 class="section-heading">Why this mattered</h2>
+                <p class="body-text">This problem mattered because:</p>
                 <ul class="clean-list">
-                    <li><strong>Goal:</strong> Reduce decision friction, not just typing effort.</li>
-                    <li><strong>Approach:</strong> Users start with private macros, publish to team once proven.</li>
-                    <li><strong>Principle:</strong> Designed for trust, speed, zero training.</li>
+                    <li>Users had to relearn patterns on different screens.</li>
+                    <li>Similar actions looked and behaved differently.</li>
+                    <li>Errors were easy to make due to unclear states.</li>
+                    <li>Designers recreated the same components again and again.</li>
+                    <li>Developers implemented UI differently each time.</li>
                 </ul>
-                <p class="body-text">
-                    We didn’t over-engineer it — **no AI in v1, no risky formatting logic**, just fast intent
-                    recognition, clarity, and trust. Because velocity without trust is noisy. Trust without velocity is
-                    useless.
-                </p>
+                <p class="body-text" style="margin-top: 1rem;">This increased user friction and made the product harder
+                    to scale.</p>
             </section>
 
-            <!-- Impact Stats -->
+            <!-- 3. Hypothesis -->
             <section class="case-section">
-                <h2 class="section-heading">Impact & Outcomes</h2>
-                <div class="stat-grid">
-                    <div class="stat-card">
-                        <span class="stat-label">Response Time</span>
-                        <span class="stat-value">&lt; 10s</span>
-                        <span class="stat-desc">From 2-3 mins manual crafting</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-label">Dependency</span>
-                        <span class="stat-value">Zero</span>
-                        <span class="stat-desc">Self-serve knowledge speed</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-label">SLA Risk</span>
-                        <span class="stat-value">Absorbed</span>
-                        <span class="stat-desc">Escalations accelerated</span>
-                    </div>
+                <h2 class="section-heading">Hypothesis</h2>
+
+                <h3 class="subsection-title">What we concluded</h3>
+                <p class="body-text">
+                    If eManager had a clear, shared design system, users would experience a more predictable interface,
+                    and teams could move faster with fewer mistakes.
+                </p>
+
+                <br>
+
+                <h3 class="subsection-title">What action was taken</h3>
+                <ul class="clean-list">
+                    <li>I created a centralized design system with shared rules, reusable components, and clear usage
+                        guidance.</li>
+                </ul>
+
+                <br>
+
+                <h3 class="subsection-title">What changed</h3>
+                <ul class="clean-list">
+                    <li>Design and development decisions became consistent, faster, and easier to review.</li>
+                </ul>
+            </section>
+
+
+            <!-- 4. Process -->
+            <section class="case-section">
+                <h2 class="section-heading">Process</h2>
+
+                <h3 class="step-title">Explore</h3>
+                <ul class="clean-list">
+                    <li>Audited existing screens and components.</li>
+                    <li>Listed repeated patterns and inconsistencies.</li>
+                    <li>Identified core UI elements used across the product.</li>
+                </ul>
+
+                <h3 class="step-title">Iterate</h3>
+                <ul class="clean-list">
+                    <li>Started with basic components used most often.</li>
+                    <li>Simplified variants to avoid unnecessary choices.</li>
+                    <li>Tested components against real product screens.</li>
+                    <li>Adjusted based on developer feedback.</li>
+                </ul>
+
+                <h3 class="step-title">Implement</h3>
+                <ul class="clean-list">
+                    <li>Finalized components with clear states and behavior.</li>
+                    <li>Created simple usage notes instead of long docs.</li>
+                    <li>Helped teams migrate existing screens.</li>
+                </ul>
+
+                <h3 class="step-title">Trade-offs & Constraints</h3>
+                <ul class="clean-list">
+                    <li>Avoided over-flexible components to keep usage clear.</li>
+                    <li>Focused on current product needs, not future guesses.</li>
+                </ul>
+            </section>
+
+            <!-- 5. Screenshots -->
+            <section class="case-section">
+                <h2 class="section-heading">Screenshots & Notes</h2>
+
+                <!-- 1. Audit -->
+                <div class="case-image-wrapper">
+                    <img src="../case-study-img/design-system/designsystem-lofi.jpg" alt="UI Audit Overview"
+                        class="case-image-full">
+                    <p class="image-caption"><strong>UI Audit Overview:</strong> Before-state screens highlighting
+                        inconsistent buttons, spacing, and inputs. This shows why users faced confusion and extra
+                        effort.</p>
                 </div>
+
+                <!-- 2. Foundations -->
+                <div class="case-image-wrapper">
+                    <img src="../case-study-img/design-system/designsystem-ss-2.jpg" alt="Design Foundations"
+                        class="case-image-full">
+                    <p class="image-caption"><strong>Design Foundations:</strong> Color tokens, typography scale,
+                        spacing system. These rules reduced visual noise and improved readability.</p>
+                </div>
+
+                <!-- 3. Components & Usage -->
+                <div class="case-image-wrapper">
+                    <img src="../case-study-img/design-system/designsystem-ss.jpg" alt="Component Library"
+                        class="case-image-full">
+                    <p class="image-caption"><strong>Component Library & Usage:</strong> Buttons, inputs, tables with
+                        states and variants. Clear states helped prevent user errors and guesswork. Simple Do’s and
+                        Don’ts reduced misuse and review cycles.</p>
+                </div>
+
             </section>
 
-            <!-- Innovation -->
+
+            <!-- 6. Solution -->
             <section class="case-section">
-                <h2 class="section-heading">The Next Evolution</h2>
-                <p class="body-text">
-                    The best part? This foundation positioned us for **future leverage** — now we can evolve this into
-                    **AI-assisted predictive macros**, where the system suggests the next macro *before* the agent even
-                    thinks of it.
-                </p>
-                <p class="body-text">
-                    This project didn’t just improve productivity. It **transformed internal execution speed into a
-                    scalable capability**, converting tribal knowledge into consistent institutional intelligence.
-                </p>
+                <h2 class="section-heading">Final Solution</h2>
+                <p class="body-text">The final solution was a practical design system that:</p>
+                <ul class="clean-list">
+                    <li>Standardized UI behavior across the product.</li>
+                    <li>Reduced cognitive load by keeping patterns familiar.</li>
+                    <li>Made actions easier to find and understand.</li>
+                    <li>Prevented errors through clear states and feedback.</li>
+                    <li>Allowed teams to build screens faster with confidence.</li>
+                </ul>
+                <p class="body-text" style="margin-top:1rem;">The system was designed to be simple, usable, and easy to
+                    maintain.</p>
+            </section>
+
+            <!-- 7. Impact -->
+            <section class="case-section">
+                <h2 class="section-heading">Impact & Learnings</h2>
+
+                <h3 class="subsection-title">Impact</h3>
+                <ul class="clean-list">
+                    <li>Reduced UI inconsistency across eManager.</li>
+                    <li>Faster design and development workflow.</li>
+                    <li>Clearer user flows with fewer surprises.</li>
+                    <li>Easier onboarding for new team members.</li>
+                </ul>
+                <br>
+
+                <h3 class="subsection-title">Learnings</h3>
+                <ul class="clean-list">
+                    <li>A design system should solve real product problems, not look perfect.</li>
+                    <li>Fewer options often lead to better usability.</li>
+                    <li>Early developer involvement saves time later.</li>
+                    <li>Consistency builds user trust more than visual polish.</li>
+                </ul>
             </section>
 
         </article>
