@@ -494,6 +494,7 @@ body {
     font-size: 0.8rem;
     color: var(--color-muted);
     text-align: right;
+    opacity:0;
 }
 
 /* =========================================
