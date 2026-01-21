@@ -63,14 +63,7 @@
             </div>
         </header>
 
-        <div class="case-image-wrapper">
-            <!-- Placeholder for Hero Image -->
-            <div
-                style="width: 100%; height: 400px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-border);">
-                <span style="font-family: var(--font-mono); color: var(--color-muted);">[Main Dashboard Hero
-                    Image]</span>
-            </div>
-        </div>
+
 
         <!-- Content Structure -->
         <article class="case-content">
@@ -127,27 +120,49 @@
             <section class="case-section">
                 <h2 class="section-heading">Design Process</h2>
 
-                <h3 class="step-title">Explore</h3>
-                <ul class="clean-list">
-                    <li>Looked at existing monitoring dashboards and alert tools.</li>
-                    <li>Explored options for combining data from different platforms (Azure, Datadog, ServiceNow, Chef)
-                        into one screen.</li>
-                </ul>
+                <div class="timeline-container">
 
-                <h3 class="step-title">Iterate</h3>
-                <ul class="clean-list">
-                    <li>Tested different layouts—table views, timelines, card layouts.</li>
-                    <li>Rejected options that hid too much info or required extra clicks.</li>
-                    <li>Balanced detail with clarity to avoid overwhelming the screen.</li>
-                </ul>
+                    <!-- Explore -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Explore</h3>
+                            <ul class="clean-list">
+                                <li>Looked at existing monitoring dashboards and alert tools.</li>
+                                <li>Explored options for combining data from different platforms (Azure, Datadog,
+                                    ServiceNow, Chef) into one screen.</li>
+                            </ul>
+                        </div>
+                    </div>
 
-                <h3 class="step-title">Implement</h3>
-                <ul class="clean-list">
-                    <li>Built the dashboard using a modular approach.</li>
-                    <li>Used APIs to fetch data from each source.</li>
-                    <li>Created a detail screen for each alert, showing timeline, related events, and resolution steps.
-                    </li>
-                </ul>
+                    <!-- Iterate -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Iterate</h3>
+                            <ul class="clean-list">
+                                <li>Tested different layouts—table views, timelines, card layouts.</li>
+                                <li>Rejected options that hid too much info or required extra clicks.</li>
+                                <li>Balanced detail with clarity to avoid overwhelming the screen.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Implement -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Implement</h3>
+                            <ul class="clean-list">
+                                <li>Built the dashboard using a modular approach.</li>
+                                <li>Used APIs to fetch data from each source.</li>
+                                <li>Created a detail screen for each alert, showing timeline, related events, and
+                                    resolution steps.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
 
                 <h3 class="step-title">Constraints</h3>
                 <ul class="clean-list">
@@ -163,38 +178,15 @@
 
                 <!-- 1 -->
                 <div class="case-image-wrapper">
-                    <div
-                        style="width: 100%; height: 300px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-border); margin-bottom: 1rem;">
-                        <span style="font-family: var(--font-mono); color: var(--color-muted);">[Main Dashboard
-                            UI]</span>
-                    </div>
-                    <p class="image-caption"><strong>Main Dashboard:</strong>Combined alerts from Azure, Datadog,
-                        ServiceNow, and internal tools. Designed to prioritize recent/critical alerts at the top and
-                        uses
-                        clear color coding for severity.</p>
+                    <img src="../case-study-img/noc-dashboard/NOC-wp.jpg" alt="NOC Work Panel" class="case-image-full">
+                    <p class="image-caption text-center"><strong>NOC Work Panel</strong> </p>
                 </div>
 
                 <!-- 2 -->
                 <div class="case-image-wrapper">
-                    <div
-                        style="width: 100%; height: 300px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-border); margin-bottom: 1rem;">
-                        <span style="font-family: var(--font-mono); color: var(--color-muted);">[Alert Detail UI]</span>
-                    </div>
-                    <p class="image-caption"><strong>Alert Detail Screen:</strong> Timeline for a single outage,
-                        root cause, steps taken, and links to related tickets. Focused on reducing steps to find the
-                        root
-                        cause and making documentation easier.</p>
-                </div>
-
-                <!-- 3 -->
-                <div class="case-image-wrapper">
-                    <div
-                        style="width: 100%; height: 300px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-border); margin-bottom: 1rem;">
-                        <span style="font-family: var(--font-mono); color: var(--color-muted);">[Analytics UI]</span>
-                    </div>
-                    <p class="image-caption"><strong>Analytics View:</strong> Trends for similar issues, common
-                        root causes, and time-to-resolve metrics. Helps with proactive planning and pattern spotting.
-                    </p>
+                    <img src="../case-study-img/noc-dashboard/NOC-alert.jpg" alt="NOC Work Panel"
+                        class="case-image-full">
+                    <p class="image-caption text-center"><strong>Alert Detail Screen</strong> </p>
                 </div>
 
             </section>
@@ -229,11 +221,11 @@
                 <br>
 
                 <h3 class="subsection-title">Learnings</h3>
-                <p class="body-text"><strong>Design learning:</strong> Clarity matters most in high-stress, high-stakes
+                <p class="body-text">Clarity matters most in high-stress, high-stakes
                     tools. Every extra click slows people down.</p>
                 <br>
-                <p class="body-text"><strong>What I’d improve next time:</strong> Would add real-time collaboration
-                    features so multiple team members could work together on the same incident screen.</p>
+                <!-- <p class="body-text"><strong>What I’d improve next time:</strong> Would add real-time collaboration
+                    features so multiple team members could work together on the same incident screen.</p> -->
             </section>
 
         </article>

@@ -62,11 +62,6 @@
             </div>
         </header>
 
-        <div class="case-image-wrapper">
-            <img style="display:none;" src="../case-study-img/temp.jpg" alt="Design System Overview"
-                class="case-main-image">
-        </div>
-
         <!-- Content Structure -->
         <article class="case-content">
 
@@ -126,29 +121,51 @@
             <section class="case-section">
                 <h2 class="section-heading">Process</h2>
 
-                <h3 class="step-title">Explore</h3>
-                <ul class="clean-list">
-                    <li>Audited existing screens and components.</li>
-                    <li>Listed repeated patterns and inconsistencies.</li>
-                    <li>Identified core UI elements used across the product.</li>
-                </ul>
+                <div class="timeline-container">
 
-                <h3 class="step-title">Iterate</h3>
-                <ul class="clean-list">
-                    <li>Started with basic components used most often.</li>
-                    <li>Simplified variants to avoid unnecessary choices.</li>
-                    <li>Tested components against real product screens.</li>
-                    <li>Adjusted based on developer feedback.</li>
-                </ul>
+                    <!-- Explore -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Explore</h3>
+                            <ul class="clean-list">
+                                <li>Audited existing screens and components.</li>
+                                <li>Listed repeated patterns and inconsistencies.</li>
+                                <li>Identified core UI elements used across the product.</li>
+                            </ul>
+                        </div>
+                    </div>
 
-                <h3 class="step-title">Implement</h3>
-                <ul class="clean-list">
-                    <li>Finalized components with clear states and behavior.</li>
-                    <li>Created simple usage notes instead of long docs.</li>
-                    <li>Helped teams migrate existing screens.</li>
-                </ul>
+                    <!-- Iterate -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Iterate</h3>
+                            <ul class="clean-list">
+                                <li>Started with basic components used most often.</li>
+                                <li>Simplified variants to avoid unnecessary choices.</li>
+                                <li>Tested components against real product screens.</li>
+                                <li>Adjusted based on developer feedback.</li>
+                            </ul>
+                        </div>
+                    </div>
 
-                <h3 class="step-title">Trade-offs & Constraints</h3>
+                    <!-- Implement -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Implement</h3>
+                            <ul class="clean-list">
+                                <li>Finalized components with clear states and behavior.</li>
+                                <li>Created simple usage notes instead of long docs.</li>
+                                <li>Helped teams migrate existing screens.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <h3 class="step-title" style="margin-top: 3rem;">Trade-offs & Constraints</h3>
                 <ul class="clean-list">
                     <li>Avoided over-flexible components to keep usage clear.</li>
                     <li>Focused on current product needs, not future guesses.</li>
@@ -161,28 +178,21 @@
 
                 <!-- 1. Audit -->
                 <div class="case-image-wrapper">
-                    <img src="../case-study-img/design-system/temp.jpg" alt="UI Audit Overview"
-                        class="case-image-full">
-                    <p class="image-caption"><strong>UI Audit Overview:</strong> Before-state screens highlighting
-                        inconsistent buttons, spacing, and inputs. This shows why users faced confusion and extra
-                        effort.</p>
+                    <img src="../case-study-img/design-system/dsimg-old.jpg" alt="Old UI Image" class="case-image-full">
+                    <p class="image-caption"><strong>Before Design System</strong> </p>
                 </div>
 
                 <!-- 2. Foundations -->
                 <div class="case-image-wrapper">
-                    <img src="../case-study-img/design-system/temp.jpg" alt="Design Foundations"
+                    <img src="../case-study-img/design-system/dsimg-2.jpg" alt="Design Foundations"
                         class="case-image-full">
-                    <p class="image-caption"><strong>Design Foundations:</strong> Color tokens, typography scale,
-                        spacing system. These rules reduced visual noise and improved readability.</p>
+                    <p class="image-caption"><strong>Design Colors, typography and spacing tokens</strong> </p>
                 </div>
 
                 <!-- 3. Components & Usage -->
                 <div class="case-image-wrapper">
-                    <img src="../case-study-img/design-system/temp.jpg" alt="Component Library"
+                    <img src="../case-study-img/design-system/dsimg.jpg" alt="Component Library"
                         class="case-image-full">
-                    <p class="image-caption"><strong>Component Library & Usage:</strong> Buttons, inputs, tables with
-                        states and variants. Clear states helped prevent user errors and guesswork. Simple Do’s and
-                        Don’ts reduced misuse and review cycles.</p>
                 </div>
 
             </section>

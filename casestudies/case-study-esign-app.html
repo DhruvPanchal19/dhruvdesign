@@ -4,31 +4,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon | Dhruv Panchal</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>eSign Tool - Case Study | Dhruv Panchal</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400&family=Syncopate:wght@700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syncopate:wght@400;700&display=swap"
         rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Lenis -->
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
 </head>
 
 <body>
+
+    <!-- Nav -->
+    <div class="back-link-container">
+        <a href="../index.html#work" class="back-link hover-trigger">
+            <i class="ri-arrow-left-line"></i> Back to Work
+        </a>
+    </div>
+    <!-- Custom Cursor -->
     <div class="cursor-dot"></div>
     <div class="cursor-circle"></div>
+
+    <!-- Noise Overlay -->
     <div class="noise-overlay"></div>
 
-    <main
-        style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
-        <h1 style="font-family: var(--font-heading); font-size: 5vw; text-transform: uppercase;">Coming Soon</h1>
-        <p style="font-family: var(--font-body); color: var(--color-muted); margin-top: 2rem;">This case study is
-            currently being documented.</p>
+    <main id="main-content">
 
-        <a href="../index.html#work" class="submit-btn hover-trigger" style="margin-top: 4rem; text-decoration: none;">
-            Back to Works
-        </a>
+        <!-- Hero -->
+        <header class="case-hero">
+            <h1 class="case-title">Built an in-house digital document signing tool to replace DocuSign and reduce cost
+                and dependency.</h1>
+            <p class="case-subtitle">Redesigned the document signing experience to keep the same usability while moving
+                to an internal system.</p>
+
+            <div class="case-meta">
+                <div class="meta-item">
+                    <span class="label">Role</span>
+                    <span class="value">UI/UX Designer & UI Developer</span>
+                </div>
+                <div class="meta-item">
+                    <span class="label">Duration</span>
+                    <span class="value">Multi-month Project</span>
+                </div>
+                <div class="meta-item">
+                    <span class="label">Output</span>
+                    <span class="value">Web-based document signing tool (UI + Dev)</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="case-image-wrapper">
+            <!-- Placeholder for Hero Image -->
+            <div
+                style="width: 100%; height: 400px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-border);">
+                <span style="font-family: var(--font-mono); color: var(--color-muted);">[Main eSign Tool Hero
+                    Image]</span>
+            </div>
+        </div>
+
+        <!-- Content Structure -->
+        <article class="case-content">
+
+            <!-- 1. Problem Statement -->
+            <section class="case-section">
+                <h2 class="section-heading">Problem Statement</h2>
+                <p class="body-text">
+                    The company was using DocuSign for digital document signing, handling hundreds of documents every
+                    month. This created ongoing cost, dependency on a third-party tool, and limited control over
+                    customization. The goal was to build an internal signing tool with the same core functionality using
+                    an existing PDFTron subscription already used by other teams.
+                </p>
+            </section>
+
+            <!-- 2. Validation (WHY) -->
+            <section class="case-section">
+                <h2 class="section-heading">Why this mattered</h2>
+                <p class="body-text">Replacing DocuSign was not just a technical task. It was a usability risk. This
+                    problem mattered for both users and the business because:</p>
+                <ul class="clean-list">
+                    <li><strong>Cost impact:</strong> DocuSign was used frequently, which made licensing expensive at
+                        scale.</li>
+                    <li><strong>Operational dependency:</strong> Any limitation or change in DocuSign directly affected
+                        internal workflows.</li>
+                    <li><strong>Fragmented tooling:</strong> Other teams already used PDFTron, but document signing
+                        lived outside the ecosystem.</li>
+                    <li><strong>User risk:</strong> Employees and clients were used to DocuSign. Any downgrade in
+                        experience could cause confusion or errors.</li>
+                    <li><strong>Business risk:</strong> Poor signing flow could lead to unsigned documents, delays, or
+                        legal issues.</li>
+                </ul>
+            </section>
+
+            <!-- 3. Hypothesis -->
+            <section class="case-section">
+                <h2 class="section-heading">Hypothesis</h2>
+
+                <h3 class="subsection-title">What we concluded</h3>
+                <p class="body-text">
+                    Users did not care which tool was used. They cared about speed, clarity, and trust. The new tool had
+                    to feel familiar and predictable. Missing or unclear signing steps would create errors and delays.
+                </p>
+
+                <br>
+
+                <h3 class="subsection-title">What we did</h3>
+                <p class="body-text">
+                    We kept the signing flow very close to DocuSign, focused on clarity over new features, and used
+                    PDFTron’s capabilities to recreate essential signing actions without overbuilding.
+                </p>
+            </section>
+
+
+            <!-- 4. Chosen Design Direction & Process -->
+            <section class="case-section">
+                <h2 class="section-heading">Design Process</h2>
+
+                <div class="timeline-container">
+
+                    <!-- Explore -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Explore</h3>
+                            <ul class="clean-list">
+                                <li>Studied the existing DocuSign flow step by step.</li>
+                                <li>Mapped required actions: view document, place signature, review, submit.</li>
+                                <li>Explored how much of this PDFTron supported out of the box.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Iterate -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Iterate</h3>
+                            <ul class="clean-list">
+                                <li>Designed simple layouts focused on the document itself.</li>
+                                <li>Tested different placements for signing actions.</li>
+                                <li>Reduced distractions around the PDF viewer.</li>
+                            </ul>
+                            <p class="body-text" style="font-size: 0.9em; margin-top: 1rem; color: var(--color-muted);">
+                                <strong>Rejected:</strong> Adding extra features beyond DocuSign or custom layouts that
+                                looked “new” but risked confusion. This was a replacement tool, not a redesign for
+                                novelty.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Implement -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Implement</h3>
+                            <ul class="clean-list">
+                                <li>Built the UI directly while designing to stay close to technical limits.</li>
+                                <li>Matched behavior closely to DocuSign: Clear signing indicators, Step-by-step flow,
+                                    and Strong visual feedback after actions.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <h3 class="step-title">Constraints</h3>
+                <ul class="clean-list">
+                    <li>Existing PDFTron API limits.</li>
+                    <li>No formal user research.</li>
+                    <li>Internal deadlines.</li>
+                    <li>Tool used by both employees and external clients.</li>
+                </ul>
+            </section>
+
+            <!-- 5. Screenshots -->
+            <section class="case-section">
+                <h2 class="section-heading">Screenshots & Notes</h2>
+
+                <!-- 1 -->
+                <div class="case-image-wrapper">
+                    <div
+                        style="width: 100%; height: 300px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-border); margin-bottom: 1rem;">
+                        <span style="font-family: var(--font-mono); color: var(--color-muted);">[Document View Before
+                            Signing]</span>
+                    </div>
+                    <p class="image-caption"><strong>Document View:</strong> Shows the full PDF with minimal UI. Intent:
+                        Keep focus on the document and reduce cognitive load.</p>
+                </div>
+
+                <!-- 2 -->
+                <div class="case-image-wrapper">
+                    <div
+                        style="width: 100%; height: 300px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-border); margin-bottom: 1rem;">
+                        <span style="font-family: var(--font-mono); color: var(--color-muted);">[Signature Placement
+                            State]</span>
+                    </div>
+                    <p class="image-caption"><strong>Signature Placement:</strong> Highlights where the user needs to
+                        sign. Intent: Prevent missed signatures and guide users clearly.</p>
+                </div>
+
+                <!-- 3 -->
+                <div class="case-image-wrapper">
+                    <div
+                        style="width: 100%; height: 300px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-border); margin-bottom: 1rem;">
+                        <span style="font-family: var(--font-mono); color: var(--color-muted);">[Review & Submit
+                            Screen]</span>
+                    </div>
+                    <p class="image-caption"><strong>Review & Submit:</strong> Confirms all required actions are
+                        complete. Intent: Reduce errors before final submission.</p>
+                </div>
+
+                <!-- 4 -->
+                <div class="case-image-wrapper">
+                    <div
+                        style="width: 100%; height: 300px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-border); margin-bottom: 1rem;">
+                        <span style="font-family: var(--font-mono); color: var(--color-muted);">[Completion
+                            Confirmation]</span>
+                    </div>
+                    <p class="image-caption"><strong>Completion:</strong> Shows a clear success message after signing.
+                        Intent: Build trust and confirm task completion.</p>
+                </div>
+
+            </section>
+
+
+            <!-- 6. Solution -->
+            <section class="case-section">
+                <h2 class="section-heading">Final Solution</h2>
+                <p class="body-text">
+                    Results in the experience:
+                </p>
+                <ul class="clean-list" style="margin-top: 1rem;">
+                    <li>Replaced DocuSign with an internal signing tool.</li>
+                    <li>Preserved familiar signing patterns to avoid relearning.</li>
+                    <li>Integrated tightly with existing internal systems.</li>
+                    <li>Used PDFTron to handle PDFs while controlling the UX layer.</li>
+                    <li>Fewer steps to complete signing.</li>
+                    <li>Clear visual hierarchy around required actions.</li>
+                    <li>Reduced chance of missing signatures.</li>
+                    <li>Consistent experience for internal users and clients.</li>
+                </ul>
+            </section>
+
+            <!-- 7. Impact -->
+            <section class="case-section">
+                <h2 class="section-heading">Impact & Learnings</h2>
+
+                <h3 class="subsection-title">Impact</h3>
+                <ul class="clean-list">
+                    <li>Reduced reliance on a third-party tool.</li>
+                    <li>Lower operational cost over time.</li>
+                    <li>Smoother internal workflow.</li>
+                    <li>Users were able to complete signing without training or support.</li>
+                </ul>
+                <br>
+
+                <h3 class="subsection-title">Learnings</h3>
+                <p class="body-text">Replacing a known tool is more risky than building something new. Familiarity is a
+                    feature.</p>
+            </section>
+
+        </article>
+
+        <!-- Footer Nav -->
+        <div class="case-footer-nav">
+            <a href="../index.html#work" class="back-link hover-trigger">
+                <i class="ri-arrow-left-line"></i> Back to Work
+            </a>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="nav-bar">
+            <a href="../index.html" class="nav-link hover-trigger">Home</a>
+            <a href="../index.html#work" class="nav-link hover-trigger">Work</a>
+            <a href="../index.html#about" class="nav-link hover-link">Profile</a>
+            <a href="../index.html#inquiry" class="nav-link hover-trigger">Connect</a>
+        </nav>
+
     </main>
 
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="../script.js"></script>
+    <script src="../script.js?v=2"></script>
 </body>
+
 </html>

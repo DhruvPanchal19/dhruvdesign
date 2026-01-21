@@ -61,10 +61,10 @@
             </div>
         </header>
 
-        <div class="case-image-wrapper">
-            <img style="display:none;" src="../case-study-img/ai-search/temp.jpg" alt="Support Portal Search UI"
+        <!-- <div class="case-image-wrapper">
+            <img src="../case-study-img/ai-search/aisearch-ss.jpg" alt="Support Portal Search UI"
                 class="case-main-image">
-        </div>
+        </div> -->
 
         <!-- Content Structure -->
         <article class="case-content">
@@ -120,53 +120,64 @@
             <section class="case-section">
                 <h2 class="section-heading">Process</h2>
 
-                <h3 class="step-title">Explore</h3>
-                <p class="body-text">
-                    Looked at options: keyword-only search, advanced filters, and AI/semantic search. Explored different
-                    layouts: list, card, and grouped results.
-                </p>
+                <div class="timeline-container">
 
-                <h3 class="step-title">Iterate</h3>
-                <p class="body-text">
-                    Tested card and list views. Card view took up too much space, made skimming slower. List view with
-                    highlights worked best. Tried adding too many filters—users got overwhelmed. Kept only the most
-                    useful ones.
-                </p>
+                    <!-- Explore -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Explore</h3>
+                            <p class="body-text">
+                                Looked at options: keyword-only search, advanced filters, and AI/semantic search.
+                                Explored different layouts: list, card, and grouped results.
+                            </p>
+                        </div>
+                    </div>
 
-                <h3 class="step-title">Implement</h3>
-                <p class="body-text">
-                    Went with a clean list layout, with key info and highlights. Added a “Did you mean” feature for
-                    mistyped queries and integrated semantic AI search to handle broad, natural questions. Worked under
-                    a tight 1-month timeline and with legacy data structures.
-                </p>
+                    <!-- Iterate -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Iterate</h3>
+                            <p class="body-text">
+                                Tested card and list views. Card view took up too much space, made skimming slower. List
+                                view with highlights worked best. Tried adding too many filters—users got overwhelmed.
+                                Kept only the most useful ones.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Implement -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Implement</h3>
+                            <p class="body-text">
+                                Went with a clean list layout, with key info and highlights. Added a “Did you mean”
+                                feature for mistyped queries and integrated semantic AI search to handle broad, natural
+                                questions. Worked under a tight 1-month timeline and with legacy data structures.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
             </section>
 
             <!-- 5. Screenshots -->
             <section class="case-section">
                 <h2 class="section-heading">Screenshots & Notes</h2>
 
-                <!-- Notes on Old Search (No image available, just text) -->
-                <div class="highlight-box">
-                    <p class="highlight-text"><strong>Old Search Page (Context):</strong> Previously, filters were
-                        cluttered, there were no suggested results, and it relied on strict keyword matching. Users had
-                        to know exact titles or paths.</p>
-                </div>
-                <br>
 
                 <div class="case-image-wrapper">
-                    <img src="../case-study-img/ai-search/temp.jpg" alt="New Search Page"
+                    <img src="../case-study-img/ai-search/global-before.jpg" alt="New Search Page"
                         class="case-image-full">
-                    <p class="image-caption"><strong>New Search Page:</strong> Clean list view, "Did you mean"
-                        suggestions, humanized summaries, and highlighted keywords. Users can search in plain language
-                        and scan results quickly.</p>
+                    <p class="image-caption text-center"><strong>Old Document Search</strong></p>
                 </div>
 
                 <div class="case-image-wrapper">
-                    <img src="../case-study-img/ai-search/temp.jpg" alt="AI Powered Results"
+                    <img src="../case-study-img/ai-search/globalsearchcurrent.jpg" alt="AI Powered Results"
                         class="case-image-full">
-                    <p class="image-caption"><strong>AI-Powered Results:</strong> User asks a question, system returns
-                        the most relevant answers, not just keyword matches. Demonstrates improved matching and
-                        usability.</p>
+                    <p class="image-caption text-center"><strong>AI-Powered Results</strong> </p>
                 </div>
             </section>
 
@@ -187,20 +198,22 @@
             <!-- 7. Impact -->
             <section class="case-section">
                 <h2 class="section-heading">Impact & Learnings</h2>
+                <h3 class="subsection-title">Impact</h3>
                 <ul class="clean-list">
                     <li>Users got answers faster and with less frustration.</li>
                     <li>Fewer tickets raised for “can’t find document” issues.</li>
                     <li>SAMs had more time for complex support, not basic queries.</li>
                 </ul>
                 <br>
+                <h3 class="subsection-title">Learnings</h3>
                 <p class="body-text">
-                    <strong>Design learning:</strong> Cutting extra filters and focusing on a clear result list made a
+                    Cutting extra filters and focusing on a clear result list made a
                     bigger difference than adding more features.
                 </p>
-                <p class="body-text">
+                <!-- <p class="body-text">
                     <strong>What I’d improve next time:</strong> Would run more quick usability tests early to fine-tune
                     search suggestions before launch.
-                </p>
+                </p> -->
             </section>
 
         </article>

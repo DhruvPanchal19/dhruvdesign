@@ -494,7 +494,6 @@ body {
     font-size: 0.8rem;
     color: var(--color-muted);
     text-align: right;
-    opacity:0;
 }
 
 /* =========================================
@@ -1483,4 +1482,100 @@ body {
 
 @media (max-width: 768px) {
     /* Mobile specific adjustments if needed */
+}
+
+.text-center {
+    text-align: center;
+}
+/* =========================================
+   16. VERTICAL TIMELINE (Process Section)
+   ========================================= */
+.timeline-container {
+    position: relative;
+    padding-left: 2rem;
+    margin: 2rem 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 1.5rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* The Dot */
+.timeline-marker {
+    position: absolute;
+    left: -2.35rem; /* Aligns with border-left of container */
+    top: 0.35rem;
+    width: 0.7rem;
+    height: 0.7rem;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-accent);
+    border-radius: 50%;
+    z-index: 1;
+    transition: background-color 0.3s;
+}
+
+/* Fix marker alignment calculation:
+   Container padding-left: 2rem = 32px
+   Border is at 0px relative to container content box? No, border-left is on container.
+   Actually, let's simplify. 
+   Container has border-left. 
+   Marker needs to sit ON that border.
+   Left: -2rem (padding) - (width/2) + (border-width/2) approx.
+   Let's use a pseudo element on the item relative to the line.
+*/
+
+.timeline-container {
+    padding-left: 0;
+    border-left: none; /* Reset, we will use a line */
+    position: relative;
+}
+
+/* The Line */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 9px; /* Half of marker width roughly centered */
+    width: 1px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.timeline-item {
+    padding-left: 3rem;
+    position: relative;
+}
+
+.timeline-marker {
+    left: 5px; /* (1px line width + padding? No, absolute to item) */
+    /* Hand-tuned centered on the 9px line */
+    left: 5px; 
+    top: 5px;   
+    width: 9px;
+    height: 9px;
+    border: 1px solid var(--color-accent);
+    background: var(--color-bg);
+    border-radius: 50%;
+}
+
+.timeline-item:hover .timeline-marker {
+    background-color: var(--color-accent);
+    box-shadow: 0 0 10px var(--color-accent);
+}
+
+.timeline-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.2;
 }
