@@ -928,6 +928,7 @@ body {
     /* Allow captions */
 }
 
+.case-image-wrapper img,
 .case-image,
 .case-main-image,
 .case-image-full {
@@ -936,6 +937,11 @@ body {
     border: 1px solid var(--color-border);
     border-radius: 4px;
     background: rgba(255, 255, 255, 0.02);
+}
+
+.case-image-wrapper img {
+    margin-bottom: 1rem;
+    align-self: center;
 }
 
 .wireframe-invert {
@@ -1484,9 +1490,9 @@ body {
     /* Mobile specific adjustments if needed */
 }
 
-.text-center {
+/* .text-center {
     text-align: center;
-}
+} */
 /* =========================================
    16. VERTICAL TIMELINE (Process Section)
    ========================================= */

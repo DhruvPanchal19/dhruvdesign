@@ -6,9 +6,13 @@ var SoundManager = {
     sounds: {},
 
     init() {
+        // Determine base path for assets based on current location
+        const isSubPage = window.location.pathname.includes('/casestudies/');
+        const basePath = isSubPage ? '../' : '';
+
         // Preload sounds
-        this.sounds['welcome'] = new Audio('backgroundsound/welcome.mp3');
-        this.sounds['click'] = new Audio('backgroundsound/btn-click.mp3');
+        this.sounds['welcome'] = new Audio(basePath + 'backgroundsound/welcome.mp3');
+        this.sounds['click'] = new Audio(basePath + 'backgroundsound/btn-click.mp3');
 
         // Adjust volumes
         this.sounds['welcome'].volume = 0.5;
@@ -162,10 +166,10 @@ document.addEventListener('DOMContentLoaded', () => {
 try {
     if (typeof Lenis !== 'undefined') {
         const lenis = new Lenis({
-            duration: 1.2,
+            duration: 1.0,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             smooth: true,
-            mouseMultiplier: 1,
+            mouseMultiplier: 1.5,
         });
 
         function raf(time) {

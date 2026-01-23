@@ -4,30 +4,306 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon | Dhruv Panchal</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>Smart University LMS - Case Study</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400&family=Syncopate:wght@700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syncopate:wght@400;700&display=swap"
         rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Lenis -->
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
 </head>
 
 <body>
+
+    <!-- Nav -->
+    <div class="back-link-container">
+        <a href="../index.html#work" class="back-link hover-trigger">
+            <i class="ri-arrow-left-line"></i> Back to Work
+        </a>
+    </div>
+    <!-- Custom Cursor -->
     <div class="cursor-dot"></div>
     <div class="cursor-circle"></div>
+
+    <!-- Noise Overlay -->
     <div class="noise-overlay"></div>
 
-    <main
-        style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
-        <h1 style="font-family: var(--font-heading); font-size: 5vw; text-transform: uppercase;">Coming Soon</h1>
-        <p style="font-family: var(--font-body); color: var(--color-muted); margin-top: 2rem;">This case study is
-            currently being documented.</p>
+    <main id="main-content">
 
-        <a href="../index.html#work" class="submit-btn hover-trigger" style="margin-top: 4rem; text-decoration: none;">
-            Back to Works
-        </a>
+        <!-- Hero -->
+        <header class="case-hero">
+            <h1 class="case-title">Built a role-based LMS to help users understand complex EHR workflows faster and
+                internal trainings easier.</h1>
+            <p class="case-subtitle">Redesigned the learning experience around a large EHR system to improve clarity,
+                speed, and daily usability</p>
+
+            <div class="case-meta">
+                <div class="meta-item">
+                    <span class="label">Role</span>
+                    <span class="value">UI/UX Designer & UI Developer</span>
+                </div>
+                <div class="meta-item">
+                    <span class="label">Duration</span>
+                    <span class="value">Ongoing / multi-phase</span>
+                </div>
+                <div class="meta-item">
+                    <span class="label">Output</span>
+                    <span class="value">Web-based LMS<br>Role-based flows</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content Structure -->
+        <article class="case-content">
+
+            <!-- 1. Intro Description -->
+            <section class="case-section">
+                <h2 class="section-heading">Project Overview</h2>
+                <p class="body-text">
+                    Designed and developed a Learning Management System (LMS) to support training for a large EHR
+                    platform used by hospitals and support teams.
+                </p>
+            </section>
+
+            <!-- 3. Problem Statement -->
+            <section class="case-section">
+                <h2 class="section-heading">Problem Statement</h2>
+                <p class="body-text">
+                    The existing EHR had over 20,000 screens, making it hard for customers to understand workflows
+                    and use the system effectively.
+                    It was also difficult for the eCW support team to track frequent new enhancements and explain
+                    updated workflows
+                    to users.
+                </p>
+            </section>
+
+            <!-- 4. Validation of the Problem (Why This Mattered) -->
+            <section class="case-section">
+                <h2 class="section-heading">Why This Mattered</h2>
+                <p class="body-text">
+                    In large hospital systems, speed and accuracy directly affect patient care.
+                    Providers need to complete tasks quickly, with no room for mistakes.
+                </p>
+                <p class="body-text">
+                    The EHR tried to keep all documentation in one place, but the workflows were still slow and hard to
+                    follow.
+                    Users struggled to know:
+                </p>
+                <ul class="clean-list">
+                    <li>Which screens were relevant to their role</li>
+                    <li>How different steps connected in a workflow</li>
+                    <li>What had changed after new releases</li>
+                </ul>
+                <p class="body-text">
+                    For the support team, this increased training time, repeated questions, and dependency on manual
+                    explanations.
+                    This created both user frustration and operational risk.
+                </p>
+            </section>
+
+            <!-- 5. Hypothesis -->
+            <section class="case-section">
+                <h2 class="section-heading">Hypothesis</h2>
+
+                <h3 class="subsection-title">What we concluded</h3>
+                <ul class="clean-list">
+                    <li>Users were overwhelmed by the size of the system.</li>
+                    <li>Learning content was not tied to real roles, specialties, or experience levels.</li>
+                    <li>One-size-fits-all training increased confusion instead of reducing it.</li>
+                </ul>
+                <p class="body-text">Users did not need to learn the full system. They needed only what applied to them,
+                    at the right time.</p>
+
+                <br>
+
+                <h3 class="subsection-title">What we did</h3>
+                <ul class="clean-list">
+                    <li>Designed a role-based LMS instead of generic documentation.</li>
+                    <li>Structured learning around real workflows, not features.</li>
+                    <li>Limited content visibility based on role, specialty, and experience.</li>
+                </ul>
+                <p class="body-text">This reduced unnecessary information and helped users focus on what mattered.</p>
+            </section>
+
+
+            <!-- 6. Chosen Design Direction & Process -->
+            <section class="case-section">
+                <h2 class="section-heading">Process</h2>
+
+                <div class="timeline-container">
+
+                    <!-- Explore -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Explore</h3>
+                            <p class="body-text">
+                                Reviewed existing training materials and support workflows.
+                                Mapped key user groups: providers, nurses, admin staff, and support teams.
+                                Explored multiple navigation models for large content libraries.
+                            </p>
+                            <p class="body-text" style="margin-top: 1rem; opacity: 0.8; font-size: 0.9em;">
+                                <strong>Rejected:</strong><br>
+                                • A single flat course list<br>
+                                Reason: It repeated the same overload problem as the EHR itself.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Iterate -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Iterate</h3>
+                            <p class="body-text">
+                                Tested content grouping by modules and workflows.
+                                Experimented with chapters and clear learning objectives.
+                                Simplified the admin flow for course creation.
+                            </p>
+                            <p class="body-text" style="margin-top: 1rem;">
+                                <strong>Decisions made:</strong><br>
+                                • Could not personalize everything at once due to time and system limits<br>
+                                • Focused first on structure and clarity over advanced AI features
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Implement -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Implement</h3>
+                            <p class="body-text">
+                                Built role-based access so users only saw relevant content.
+                                Divided courses into chapters with clear learning goals.
+                                Designed a simpler, guided flow for creating and managing courses.
+                            </p>
+                            <p class="body-text" style="margin-top: 1rem; opacity: 0.8; font-size: 0.9em;">
+                                <strong>Constraints:</strong><br>
+                                • Limited research access<br>
+                                • Tight delivery timelines<br>
+                                • Needed to work with existing enterprise systems
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 7. Screenshots & Notes -->
+            <section class="case-section">
+                <h2 class="section-heading">Screenshots & Notes</h2>
+
+                <div class="case-image-wrapper">
+                    <!-- Placeholder for Screenshot 1 -->
+                    <img src="../case-study-img/smart-uni/oldprojectcreationblack.jpg" alt="Old Course Creation">
+                    <p class="image-caption text-center">
+                        <strong>Old Course Creation</strong> <br>
+                        The old interface forced users through 6 distinct steps and 66+ clicks just to launch a course.
+                    </p>
+                </div>
+
+                <div class="case-image-wrapper">
+                    <!-- Placeholder for Screenshot 2 -->
+                    <p class="image-caption text-center">
+                        <img src="../case-study-img/smart-uni/newprojectcreation1.jpg" alt="New Course Creation">
+                        <img src="../case-study-img/smart-uni/newprojectcreation.jpg" alt="New Course Creation">
+                        <strong>New Course Creation</strong> <br>
+                        New 3 Step Course creation process with lessthen 18 clicks to complete a single course creation.
+                    </p>
+                </div>
+
+                <div class="case-image-wrapper">
+                    <!-- Placeholder for Screenshot 3 -->
+                    <img src="../case-study-img/smart-uni/NewUniversity.jpg" alt="New University Home Screen">
+                    <p class="image-caption text-center">
+                        <strong>Home Screen</strong> <br>
+                    </p>
+                </div>
+
+                <div class="case-image-wrapper">
+                    <!-- Placeholder for Screenshot 4 -->
+                    <img src="../case-study-img/smart-uni/uni-course.jpg" alt="Course Screen">
+                    <p class="image-caption text-center">
+                        <strong>Course Screen</strong>
+                    </p>
+                </div>
+            </section>
+
+
+            <!-- 8. Final Solution -->
+            <section class="case-section">
+                <h2 class="section-heading">Final Solution</h2>
+                <p class="body-text">The final solution was a new LMS designed for both external users and internal
+                    teams.</p>
+
+                <h3 class="subsection-title" style="margin-top: 2rem;">Key Changes</h3>
+                <ul class="clean-list">
+                    <li>Content tailored by role, specialty, and experience.</li>
+                    <li>Learning divided into chapters with clear objectives.</li>
+                    <li>Focus on real workflows instead of full system coverage.</li>
+                </ul>
+
+                <h3 class="subsection-title" style="margin-top: 2rem;">Benefits</h3>
+                <ul class="clean-list">
+                    <li><strong>Learn only what they needed</strong></li>
+                    <li><strong>Understand workflows faster</strong></li>
+                    <li><strong>Reduce confusion when EHR features changed</strong></li>
+                </ul>
+                <p class="body-text">Support teams could also guide users more consistently using the same learning
+                    structure.</p>
+            </section>
+
+            <!-- 9. Impact & Learnings -->
+            <section class="case-section">
+                <h2 class="section-heading">Impact & Learnings</h2>
+                <h3 class="subsection-title">Impact</h3>
+                <ul class="clean-list">
+                    <li>Reduced course creation steps from 66 clicks to 17 clicks.</li>
+                    <li>Smoother onboarding for new EHR users.</li>
+                    <li>Faster understanding of workflows for support teams.</li>
+                    <li>Less cognitive load during training.</li>
+                </ul>
+                <br>
+                <h3 class="subsection-title">Learnings</h3>
+                <ul class="clean-list">
+                    <li>Breaking complex systems into small, goal-based learning units makes a big difference.</li>
+                    <li>Structure often matters more than adding new features.</li>
+                </ul>
+
+
+            </section>
+
+        </article>
+
+        <!-- Footer Nav -->
+        <div class="case-footer-nav">
+            <a href="../index.html#work" class="back-link hover-trigger">
+                <i class="ri-arrow-left-line"></i> Back to Work
+            </a>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="nav-bar">
+            <a href="../index.html" class="nav-link hover-trigger">Home</a>
+            <a href="../index.html#work" class="nav-link hover-trigger">Work</a>
+            <a href="../index.html#about" class="nav-link hover-link">Profile</a>
+            <a href="../index.html#inquiry" class="nav-link hover-trigger">Connect</a>
+        </nav>
+
     </main>
 
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="../script.js"></script>
 </body>
