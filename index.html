@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BXNGKCR1N"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8BXNGKCR1N');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dhruv Panchal | UI/UX Designer & Developer</title>
@@ -15,6 +24,7 @@
 
     <!-- Icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
@@ -40,8 +50,9 @@
 
     <!-- Navigation -->
     <nav class="nav-bar">
+        <a href="#about-me" class="nav-link hover-trigger">About Me</a>
+        <a href="#process" class="nav-link hover-trigger">Process</a>
         <a href="#work" class="nav-link hover-trigger">Work</a>
-        <a href="#about" class="nav-link hover-trigger">Profile</a>
         <a href="#inquiry" class="nav-link hover-trigger">Connect</a>
     </nav>
 
@@ -56,20 +67,18 @@
             <div class="hero-subtitle">
                 <p>UI/UX DESIGNER • USABILITY SPECIALIST • FRONT-END DEV</p>
                 <br>
-                <p>Based in India.</p>
+                <p>This Portfolio is developed by me.</p>
             </div>
             <!-- Mobile Only 3D Background -->
             <div id="canvas-container"></div>
         </section>
 
-
-
         <!-- About Me Section -->
         <section id="about-me" class="about-section">
             <div class="about-grid">
                 <div class="about-image-wrapper">
-                    <img src="img/20250203_174039.JPG" alt="Dhruv Panchal Profile" class="about-image">
-                    <img src="img/20250203_174039.JPG" alt="Dhruv Panchal Profile Color" class="about-image-color">
+                    <img src="img/20250203_174039.JPG" alt="Dhruv Panchal Profile Default" class="about-image">
+                    <img src="img/IMG_0020.JPG" alt="Dhruv Panchal Profile Reveal" class="about-image-color">
                 </div>
                 <div class="about-content">
                     <h2>Bridging Logic & Imagination</h2>
@@ -90,8 +99,8 @@
         <!-- Design Process Section -->
         <section id="process" class="process-section">
             <div class="section-intro">
-                <h2 class="section-title">The Blueprint</h2>
-                <p style="color: var(--color-muted); font-family: var(--font-mono);">( HOW I WORK )</p>
+                <h2 class="section-title">This is my Blueprint</h2>
+                <p style="color: var(--color-muted); font-family: var(--font-mono);">( THIS IS HOW I WORK )</p>
             </div>
 
             <div class="process-grid">
@@ -201,13 +210,22 @@
                     <!-- Column 2: Tools -->
                     <div class="skill-category">
                         <h4 class="category-title">Tools & Stack</h4>
-                        <ul class="skill-list">
-                            <li>Figma / Adobe XD</li>
-                            <li>Sketch </li>
-                            <li>Framer / Webflow</li>
-                            <li>HTML5 / CSS3 / SCSS</li>
-                            <li>JavaScript (ES6+) / jQuery</li>
-                            <li>Git / VS Code</li>
+                        <ul class="skill-list tools-list">
+                            <li><i class="devicon-figma-plain"></i> Figma / &nbsp;<i class="devicon-xd-plain"></i>Adobe
+                                XD
+                            </li>
+                            <li><i class="devicon-sketch-plain"></i> Sketch </li>
+                            <li><i class="devicon-framermotion-original"></i>
+                                Framer
+                                / &nbsp;<i class="devicon-webflow-original"></i>
+                                Webflow</li>
+                            <li><i class="devicon-html5-plain"></i> HTML5 / &nbsp;<i class="devicon-css3-plain"></i>
+                                CSS3 </li>
+                            <li><i class="devicon-javascript-plain"></i> JavaScript
+                                (ES6+) / &nbsp;<i class="devicon-jquery-plain"></i> jQuery</li>
+                            <li><i class="devicon-git-plain"></i> Git / &nbsp;<i class="devicon-vscode-plain"></i> VS
+                                Code
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -216,8 +234,8 @@
 
         <!-- Selected Work (Magnetic List) -->
         <section id="work" class="work-section">
-            <div class="section-label" style="margin-bottom: 2rem; font-family: var(--font-mono); opacity: 0.6;">(
-                SELECTED WORKS )</div>
+            <h4 class="category-title" style="margin-bottom: 2rem; font-family: var(--font-mono); opacity: 0.6;">(
+                SELECTED WORKS )</h4>
 
             <div class="work-list">
                 <!-- 1 -->
@@ -337,6 +355,18 @@
 
                 </div>
             </form>
+        </section>
+
+        <!-- Photography Section -->
+        <section id="photography" class="photography-section">
+            <div class="photography-content">
+                <h2 class="section-title">Through <br>My Lens</h2>
+                <p class="section-desc">Beyond pixels and code, I capture the world as it is. <br>A collection of
+                    moments, light, and stories.</p>
+                <a href="photography.html" class="view-gallery-btn hover-trigger">
+                    View Gallery <i class="ri-arrow-right-line"></i>
+                </a>
+            </div>
         </section>
 
     </main>

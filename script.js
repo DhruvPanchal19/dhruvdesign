@@ -332,6 +332,7 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
             currentRadius += (targetRadius - currentRadius) * 0.1;
 
             if (isHovering && Math.abs(targetRadius - currentRadius) > 0.5) {
+                colorImage.style.opacity = '1'; // Ensure visible when active
                 const maskStyle = `radial-gradient(circle ${currentRadius}px at ${mouseX}px ${mouseY}px, black 30%, transparent 100%)`;
                 colorImage.style.webkitMaskImage = maskStyle;
                 colorImage.style.maskImage = maskStyle;
@@ -344,6 +345,7 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
                 requestAnimationFrame(animateBrush);
             } else if (!isHovering) {
                 // Fully hidden
+                colorImage.style.opacity = '0'; // Hide completely when done
                 colorImage.style.webkitMaskImage = `none`;
                 colorImage.style.maskImage = `none`;
             }
@@ -351,7 +353,8 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
 
         aboutWrapper.addEventListener('mouseenter', (e) => {
             isHovering = true;
-            targetRadius = 250; // Bigger Brush Size
+            colorImage.style.opacity = '1'; // Show immediately
+            targetRadius = 450; // Bigger Brush Size
             const rect = aboutWrapper.getBoundingClientRect();
             mouseX = e.clientX - rect.left;
             mouseY = e.clientY - rect.top;

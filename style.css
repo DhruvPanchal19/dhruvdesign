@@ -247,8 +247,8 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    filter: grayscale(100%);
-    /* Start fully grayscale */
+    filter: none;
+    /* Start fully visible/normal */
     transition: filter 0.5s;
 }
 
@@ -262,7 +262,8 @@ body {
     z-index: 2;
     -webkit-mask-image: radial-gradient(circle 0px at 0 0, black 0%, transparent 100%);
     mask-image: radial-gradient(circle 0px at 0 0, black 0%, transparent 100%);
-    /* Hidden by default */
+    opacity: 0;
+    /* Hidden by default to prevent covering */
     pointer-events: none;
     /* Let events pass to wrapper */
     /* No transition for mask to prevent lag */
@@ -428,6 +429,39 @@ body {
     .about-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Tools & Stack Icons Customization */
+.tools-list li {
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+}
+
+.tools-list li::before {
+    display: none;
+}
+
+.tools-list li i {
+    margin-right: 0.5rem;
+    color: var(--color-accent);
+    /* Fallback for font-icons */
+    font-size: 1.1em;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    /* Force all icons (including SVG originals) to Monochrome White */
+    /* filter: brightness(0) invert(1); */
+}
+
+/* Force specific original icons to white */
+.tools-list li i[class*="-original"] {
+    filter: brightness(0) invert(1);
+    opacity: 1;
+    /* Ensure full visibility */
+}
+
+.tools-list li:hover i {
+    opacity: 1;
 }
 
 
@@ -859,8 +893,8 @@ body {
 
 .case-title {
     font-family: var(--font-heading);
-    font-size: 4vw;
-    /* Increased from 4vw for better impact */
+    font-size: 3.2vw;
+    /* Reduced from 4vw */
     line-height: 1.1;
     margin-bottom: 2rem;
     max-width: 90%;
@@ -906,7 +940,7 @@ body {
 
 .section-heading {
     font-family: var(--font-heading);
-    font-size: 2rem;
+    font-size: 1.6rem;
     text-transform: uppercase;
     margin-bottom: 2rem;
     color: var(--color-text);
@@ -1015,7 +1049,7 @@ body {
 
 .subsection-title {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: var(--color-text);
     margin-top: 3rem;
     margin-bottom: 1.5rem;
@@ -1024,7 +1058,7 @@ body {
 
 .step-title {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: var(--color-text);
     margin-top: 3rem;
     margin-bottom: 1rem;
@@ -1091,7 +1125,7 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
     .case-title {
-        font-size: 12vw;
+        font-size: 9.6vw;
     }
 
     .case-meta {
@@ -1282,6 +1316,114 @@ body {
     cursor: pointer;
 }
 
+
+/* =========================================
+   Photography Section (Home) - REDESIGN
+   ========================================= */
+.photography-section {
+    padding: 15vh 5vw;
+    background-color: #FFFFFF;
+    /* White Background */
+    color: #050505;
+    /* Black Text */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    border-top: none;
+    /* Remove border if it clashes */
+}
+
+.photography-content .section-title {
+    font-family: var(--font-heading);
+    font-size: 5.6vw;
+    /* Reduced by 30% from 8vw */
+    line-height: 0.9;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    color: #050505;
+    /* Black */
+}
+
+.photography-content .section-desc {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    color: #333333;
+    /* Dark Grey for readability */
+    max-width: 600px;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.view-gallery-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #050505;
+    /* Black */
+    text-decoration: none;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid #050505;
+    /* Black Border */
+    transition: opacity 0.3s, padding-right 0.3s;
+}
+
+.view-gallery-btn:hover {
+    opacity: 0.7;
+    padding-right: 0.5rem;
+    /* Slight movement */
+}
+
+/* =========================================
+   Photography Page (Gallery) - MASONRY
+   ========================================= */
+.photo-gallery-section {
+    padding: 0 5vw 10vh;
+}
+
+.photo-grid {
+    /* Masonry Layout using Columns */
+    column-count: 3;
+    column-gap: 2rem;
+    width: 100%;
+}
+
+.photo-item {
+    width: 100%;
+    margin-bottom: 2rem;
+    /* Spacing between items vertically */
+    break-inside: avoid;
+    /* Prevent split across columns */
+    border-radius: 4px;
+    background-color: #111;
+    overflow: hidden;
+    /* Aspect ratio removed to allow natural height */
+}
+
+.photo-item img {
+    width: 100%;
+    height: auto;
+    /* Maintain natural aspect ratio */
+    display: block;
+    transition: transform 0.6s ease, filter 0.6s ease;
+    filter: grayscale(100%);
+}
+
+/* Hover Effect: Color on Hover */
+.photo-item:hover img {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+@media (max-width: 1024px) {
+    .photo-grid {
+        column-count: 2;
+    }
+}
+
 /* =========================================
    13. FOOTER
    ========================================= */
@@ -1357,6 +1499,16 @@ body {
 
     .project-row button {
         align-self: flex-end;
+    }
+
+    .photography-content .section-title {
+        font-size: 10.5vw;
+        /* Reduced by 30% from 15vw */
+    }
+
+    .photo-grid {
+        column-count: 1;
+        /* Single col on mobile */
     }
 }
 
@@ -1516,7 +1668,8 @@ body {
 /* The Dot */
 .timeline-marker {
     position: absolute;
-    left: -2.35rem; /* Aligns with border-left of container */
+    left: -2.35rem;
+    /* Aligns with border-left of container */
     top: 0.35rem;
     width: 0.7rem;
     height: 0.7rem;
@@ -1539,7 +1692,8 @@ body {
 
 .timeline-container {
     padding-left: 0;
-    border-left: none; /* Reset, we will use a line */
+    border-left: none;
+    /* Reset, we will use a line */
     position: relative;
 }
 
@@ -1549,7 +1703,8 @@ body {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 9px; /* Half of marker width roughly centered */
+    left: 9px;
+    /* Half of marker width roughly centered */
     width: 1px;
     background: rgba(255, 255, 255, 0.1);
 }
@@ -1560,10 +1715,11 @@ body {
 }
 
 .timeline-marker {
-    left: 5px; /* (1px line width + padding? No, absolute to item) */
+    left: 5px;
+    /* (1px line width + padding? No, absolute to item) */
     /* Hand-tuned centered on the 9px line */
-    left: 5px; 
-    top: 5px;   
+    left: 5px;
+    top: 5px;
     width: 9px;
     height: 9px;
     border: 1px solid var(--color-accent);
