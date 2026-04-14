@@ -13,7 +13,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eSign Platform - DocuSign Replacement UX · Dhruv Panchal</title>
+    <title>eSign Platform- DocuSign Replacement UX · Dhruv Panchal</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,10 +47,10 @@
 
         <!-- Hero -->
         <header class="case-hero">
-            <h1 class="case-title">Replacing DocuSign internally - without losing the trust users had in it.</h1>
+            <h1 class="case-title">Replacing DocuSign internally- without losing the trust users had in it.</h1>
             <p class="case-subtitle">The company signed hundreds of documents monthly through DocuSign. The cost was
                 real. The UX risk of replacing it was realer. I designed the internal tool that felt like nothing had
-                changed - while everything had.</p>
+                changed- while everything had.</p>
 
             <div class="case-meta">
                 <div class="meta-item">
@@ -83,7 +83,7 @@
                 <p class="body-text">
                     Replacing a known tool is more dangerous than building something new. With new tools,
                     users have no expectations to violate. With replacements, every deviation from the
-                    familiar is a potential trust failure - and in document signing, a trust failure
+                    familiar is a potential trust failure- and in document signing, a trust failure
                     means unsigned contracts, delayed workflows, and legal risk.
                 </p>
                 <p class="body-text" style="margin-top: 1rem;">
@@ -120,7 +120,7 @@
                 <h3 class="subsection-title">What we concluded</h3>
                 <blockquote
                     style="border-left:3px solid #1D4ED8;padding-left:20px;margin:24px 0;font-style:italic;font-size:17px;color:#1D4ED8;">
-                    "Users didn't care which tool was used. They cared about speed, clarity, and trust - and they
+                    "Users didn't care which tool was used. They cared about speed, clarity, and trust- and they
                     expected the new tool to deliver all three from the first use."
                 </blockquote>
                 <p class="body-text">
@@ -262,7 +262,7 @@
 
                 <h3 class="subsection-title">Impact</h3>
                 <ul class="clean-list">
-                    <li>DocuSign replaced for all internal document workflows - estimated licensing saving: <span
+                    <li>DocuSign replaced for all internal document workflows- estimated licensing saving: <span
                             style="color:#F5A623;font-weight:600;background:#2A1A00;padding:1px 5px;border-radius:3px;font-family:monospace">[₹XXX,XXX]</span>
                         annually</li>
                     <li>In walkthroughs with <span
@@ -271,8 +271,8 @@
                     <li>82% reduction in support tickets raised for signing errors in first <span
                             style="color:#F5A623;font-weight:600;background:#2A1A00;padding:1px 5px;border-radius:3px;font-family:monospace">4</span>
                         weeks post-launch</li>
-                    <li>External client signing flow preserved - no client-facing complaints or confusion reported</li>
-                    <li>Integrated with existing internal systems - eliminated document workflow fragmentation</li>
+                    <li>External client signing flow preserved- no client-facing complaints or confusion reported</li>
+                    <li>Integrated with existing internal systems- eliminated document workflow fragmentation</li>
                 </ul>
                 <br>
 
@@ -280,7 +280,7 @@
                 <p class="body-text">Replacing a known tool is more risky than building something new. Familiarity is a
                     feature.</p>
                 <p class="body-text" style="margin-top: 1rem;">
-                    This constraint - match DocuSign's patterns, don't improve on them - felt limiting
+                    This constraint- match DocuSign's patterns, don't improve on them- felt limiting
                     at first. In practice it was the most important design principle on the project. Users
                     didn't need innovation. They needed reliability. Those are different briefs, and knowing
                     which one you're working on changes every decision.

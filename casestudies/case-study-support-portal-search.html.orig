@@ -13,7 +13,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Support Search - Knowledge Base UX · Dhruv Panchal</title>
+    <title>AI Support Search- Knowledge Base UX · Dhruv Panchal</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,10 +47,10 @@
 
         <!-- Hero -->
         <header class="case-hero">
-            <h1 class="case-title">Users spent 5 minutes searching for documents they knew existed - and gave up anyway.
+            <h1 class="case-title">Users spent 5 minutes searching for documents they knew existed- and gave up anyway.
                 I redesigned the search to get them there in 30 seconds.</h1>
-            <p class="case-subtitle">Replaced keyword-only search with AI-powered semantic matching - turning the
-                support portal's self-service from a frustration into the default path for users.</p>
+            <p class="case-subtitle">Replaced keyword-only search with AI-powered semantic matching- turning the support
+                portal's self-service from a frustration into the default path for users.</p>
 
             <div class="case-meta">
                 <div class="meta-item">
@@ -80,10 +80,10 @@
             <section class="case-section">
                 <h2 class="section-heading">Problem Statement</h2>
                 <p class="body-text">
-                    Users were searching the support portal for documents they knew existed - and
+                    Users were searching the support portal for documents they knew existed- and
                     leaving empty-handed. The existing keyword search matched only on exact document
                     titles. A user searching 'my payment didn't go through' got no results. The
-                    document they needed was titled 'Payment Failure Error Resolution' - close in
+                    document they needed was titled 'Payment Failure Error Resolution'- close in
                     meaning, zero match in keywords.
                 </p>
                 <p class="body-text" style="margin-top: 1rem;">
@@ -121,7 +121,7 @@
                 <br>
 
                 <h3 class="subsection-title">What we did</h3>
-                <p class="body-text"><strong>Result: users now find answers in under 30 seconds - down from 5 minutes or
+                <p class="body-text"><strong>Result: users now find answers in under 30 seconds- down from 5 minutes or
                         more.</strong></p>
                 <ul class="clean-list" style="margin-top: 1rem;">
                     <li>Integrated AI-powered, semantic search to deliver more human results.</li>
@@ -157,7 +157,7 @@
                                 Tested two result layouts with internal users on timed tasks. In the card layout,
                                 users spent ~8 seconds scanning each result before selecting. In the list layout
                                 with keyword highlights, that dropped to ~3 seconds. Decision: list wins. Cards
-                                looked cleaner - lists worked faster. In a support context where users are already
+                                looked cleaner- lists worked faster. In a support context where users are already
                                 frustrated, speed beats aesthetics.
                             </p>
                             <p class="body-text" style="margin-top: 1rem;">
@@ -197,8 +197,8 @@
                     <li><strong>Fallback always visible:</strong> "Contact our team →" appears below every result set,
                         never hidden. Users should never feel trapped by the AI result.</li>
                     <li><strong>Honest low-confidence state:</strong> When AI confidence is low, the interface says "We
-                        found related articles, but your specific question may need a human" - not a hallucinated
-                        answer.</li>
+                        found related articles, but your specific question may need a human"- not a hallucinated answer.
+                    </li>
                 </ul>
             </section>
 
@@ -210,7 +210,7 @@
                 <div class="case-image-wrapper">
                     <img src="../case-study-img/ai-search/global-before.jpg" alt="New Search Page"
                         class="case-image-full">
-                    <p class="image-caption text-center">Old keyword search - exact title match only. A query like
+                    <p class="image-caption text-center">Old keyword search- exact title match only. A query like
                         'payment didn't work' returned zero results despite a relevant article existing in the knowledge
                         base.</p>
                 </div>
@@ -218,7 +218,7 @@
                 <div class="case-image-wrapper">
                     <img src="../case-study-img/ai-search/globalsearchcurrent.jpg" alt="AI Powered Results"
                         class="case-image-full">
-                    <p class="image-caption text-center">New AI-powered search - semantic matching returns relevant
+                    <p class="image-caption text-center">New AI-powered search- semantic matching returns relevant
                         results for natural language queries, with keyword highlights in excerpts and source attribution
                         on every result.</p>
                 </div>
@@ -248,9 +248,9 @@
                     business value:
                 </p>
                 <ul class="clean-list" style="margin-top: 1rem;">
-                    <li><span><strong>Search Time: 10× Faster</strong> - Time to find a document dropped from <strong>5+
+                    <li><span><strong>Search Time: 10× Faster</strong>- Time to find a document dropped from <strong>5+
                                 minutes</strong> to <strong>under 30 seconds</strong>.</span></li>
-                    <li><span><strong>Support Ticket Deflection: 68% Reduction</strong> - "Can't find document" support
+                    <li><span><strong>Support Ticket Deflection: 68% Reduction</strong>- "Can't find document" support
                             tickets practically vanished in the first four weeks.</span></li>
                     <li><span><strong>High Deflection Rate:</strong> The combination of semantic search and "Did you
                             mean" logic successfully resolved <strong>94%</strong> of search journeys without requiring

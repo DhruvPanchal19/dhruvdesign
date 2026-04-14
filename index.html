@@ -41,6 +41,16 @@
 
 <body>
 
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-percentage">0%</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- Custom Cursor -->
     <div class="cursor-dot"></div>
     <div class="cursor-circle"></div>
@@ -50,9 +60,9 @@
 
     <!-- Navigation -->
     <nav class="nav-bar">
-        <a href="#about-me" class="nav-link hover-trigger">About Me</a>
-        <a href="#process" class="nav-link hover-trigger">Process</a>
         <a href="#work" class="nav-link hover-trigger">Work</a>
+        <a href="#process" class="nav-link hover-trigger">Process</a>
+        <a href="#about-me" class="nav-link hover-trigger">About Me</a>
         <a href="#inquiry" class="nav-link hover-trigger">Connect</a>
     </nav>
 
@@ -69,6 +79,11 @@
                 <br>
                 <p>This Portfolio is developed by me.</p>
             </div>
+
+            <div class="availability-status">
+                <div class="status-dot"></div>
+                <p>Open to full-time UX/Product Designer roles · Remote-friendly</p>
+            </div>
             <!-- Mobile Only 3D Background -->
             <div id="canvas-container"></div>
         </section>
@@ -81,17 +96,19 @@
                     <img src="img/IMG_0020.JPG" alt="Dhruv Panchal Profile Reveal" class="about-image-color">
                 </div>
                 <div class="about-content">
-                    <h2>Bridging Logic & Imagination</h2>
+                    <h2>I design enterprise products<br>that teams actually want to use.</h2>
                     <p class="about-bio">
-                        I'm the UX designer who transforms everyday interactions into memorable experiences. My passion
-                        lies in turning complex ideas into designs that not only look good but work even better. With an
-                        eye for detail and a knack for innovation, I craft digital journeys that connect creativity with
-                        functionality.
+                        UI/UX Designer specializing in SaaS dashboards, design systems, and AI-powered workflows - with
+                        a front-end foundation that makes design-to-dev handoffs seamless.
                     </p>
-                    <p class="about-bio">
-                        Whether it's bridging creativity and functionality or driving success through design, I’m all
-                        about making the user experience both impactful and delightful.
-                    </p>
+                    <div class="about-actions" style="display: flex; gap: 1.5rem; margin-top: 2.5rem; flex-wrap: wrap;">
+                        <a href="#work" class="submit-btn hover-trigger"
+                            style="flex: none; min-width: auto; padding: 1rem 2rem; background: var(--color-accent); color: var(--color-bg);">View
+                            my work ↓</a>
+                        <a href="dhruvpanchal_uiux.pdf" target="_blank" download="Dhruv_Panchal_CV.pdf"
+                            class="submit-btn hover-trigger"
+                            style="flex: none; min-width: auto; padding: 1rem 2rem;">Download CV.</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -103,7 +120,54 @@
                 <p style="color: var(--color-muted); font-family: var(--font-mono);">( THIS IS HOW I WORK )</p>
             </div>
 
-            <div class="process-grid">
+            <div id="blueprint-tiles" class="process-grid">
+                <!-- Tile 1 -->
+                <div class="process-step">
+                    <span class="step-number">01- 02</span>
+                    <h3 class="step-title">Discover & Define</h3>
+                    <ul class="step-list">
+                        <li>Stakeholder interviews</li>
+                        <li>User research (JTBD)</li>
+                        <li>Heuristic review</li>
+                        <li>IA & user flows</li>
+                    </ul>
+                    <div class="step-output">Output: Strategic Brief · Personas · IA Map</div>
+                </div>
+
+                <!-- Tile 2 -->
+                <div class="process-step">
+                    <span class="step-number">03- 04</span>
+                    <h3 class="step-title">Design & Build</h3>
+                    <ul class="step-list">
+                        <li>Wireframing & UX</li>
+                        <li>High-fidelity UI</li>
+                        <li>Design system</li>
+                        <li>Microinteractions</li>
+                    </ul>
+                    <div class="step-output">Output: Wireframes · Polished Screens · Style Guide</div>
+                </div>
+
+                <!-- Tile 3 -->
+                <div class="process-step">
+                    <span class="step-number">05- 07</span>
+                    <h3 class="step-title">Test & Deliver</h3>
+                    <ul class="step-list">
+                        <li>Usability testing</li>
+                        <li>Dev-ready specs</li>
+                        <li>QA support</li>
+                        <li>Ongoing optimisation</li>
+                    </ul>
+                    <div class="step-output">Output: Dev Kit · Prototype · Growth Roadmap</div>
+                </div>
+            </div>
+
+            <div id="detailed-process-actions" style="margin-top: 4rem;">
+                <button class="submit-btn hover-trigger"
+                    onclick="document.getElementById('detailed-process-grid').style.display = 'grid'; document.getElementById('detailed-process-actions').style.display = 'none'; document.getElementById('blueprint-tiles').style.display = 'none'; document.getElementById('hide-detailed-process-actions').style.display = 'block';">View
+                    Detailed process</button>
+            </div>
+
+            <div id="detailed-process-grid" class="process-grid" style="display: none;">
                 <!-- 1 -->
                 <div class="process-step">
                     <span class="step-number">01</span>
@@ -189,6 +253,12 @@
                     </ul>
                     <div class="step-output">Output: Growth Roadmap</div>
                 </div>
+            </div>
+
+            <div id="hide-detailed-process-actions" style="display: none; margin-top: 4rem;">
+                <button class="submit-btn hover-trigger"
+                    onclick="document.getElementById('detailed-process-grid').style.display = 'none'; document.getElementById('hide-detailed-process-actions').style.display = 'none'; document.getElementById('blueprint-tiles').style.display = 'grid'; document.getElementById('detailed-process-actions').style.display = 'block';">Hide
+                    Detailed process</button>
             </div>
 
             <!-- Skills & Tools -->
@@ -349,7 +419,8 @@
                     </div>
 
                     <!-- Secondary Action (Below) -->
-                    <a href="#" onclick="handleCVClick(event)" class="cv-link hover-trigger">
+                    <a href="dhruvpanchal_uiux.pdf" target="_blank" download="Dhruv_Panchal_CV.pdf"
+                        class="cv-link hover-trigger">
                         <i class="ri-file-download-line"></i> Download CV / Resume
                     </a>
 
@@ -357,17 +428,7 @@
             </form>
         </section>
 
-        <!-- Photography Section -->
-        <section id="photography" class="photography-section">
-            <div class="photography-content">
-                <h2 class="section-title">Through <br>My Lens</h2>
-                <p class="section-desc">Beyond pixels and code, I capture the world as it is. <br>A collection of
-                    moments, light, and stories.</p>
-                <a href="photography.html" class="view-gallery-btn hover-trigger">
-                    View Gallery <i class="ri-arrow-right-line"></i>
-                </a>
-            </div>
-        </section>
+
 
     </main>
 

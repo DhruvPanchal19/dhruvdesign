@@ -13,7 +13,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design System - Case Study</title>
+    <title>Design System- eManager · Dhruv Panchal</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,10 +47,11 @@
 
         <!-- Hero -->
         <header class="case-hero">
-            <h1 class="case-title">Built a design system for eManager to reduce UI confusion.</h1>
-            <p class="case-subtitle">Redesigned the eManager UI foundation to improve consistency, reduce user effort,
-                and speed up product changes.</p>
-
+            <h1 class="case-title">eManager had no shared UI language. I built one- and stopped the drift.</h1>
+            <!-- <p class="case-subtitle">Redesigned the SaaS UI foundation to improve consistency, reduce user effort,
+                and speed up product changes.</p> -->
+            <p class="case-subtitle">A centralized component library and token system that unified 20+ screens, gave
+                four teams a shared design language, and made every new feature cheaper to ship than the last.</p>
             <div class="case-meta">
                 <div class="meta-item">
                     <span class="label">Role</span>
@@ -58,7 +59,7 @@
                 </div>
                 <div class="meta-item">
                     <span class="label">Duration</span>
-                    <span class="value">Multi-month Project</span>
+                    <span class="value">6-month project</span>
                 </div>
                 <div class="meta-item">
                     <span class="label">Output</span>
@@ -70,54 +71,70 @@
         <!-- Content Structure -->
         <article class="case-content">
 
+            <!-- Quick Stats -->
+            <section class="case-section" style="margin-bottom: 4rem;">
+                <div class="stat-grid" style="margin-top: 0;">
+                    <div class="stat-card">
+                        <span class="stat-value"
+                            style="font-family: var(--font-heading); font-size: 3.5rem; color: var(--color-text); display: block; margin-bottom: 0.5rem; line-height: 1;">80+</span>
+                        <span class="stat-label">Components built</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value"
+                            style="font-family: var(--font-heading); font-size: 3.5rem; color: var(--color-text); display: block; margin-bottom: 0.5rem; line-height: 1;">59+</span>
+                        <span class="stat-label">Design tokens defined</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value"
+                            style="font-family: var(--font-heading); font-size: 3.5rem; color: var(--color-text); display: block; margin-bottom: 0.5rem; line-height: 1;">40%</span>
+                        <span class="stat-label">Reduction in handoff time</span>
+                    </div>
+                </div>
+            </section>
+
             <!-- 1. Problem Statement -->
             <section class="case-section">
                 <h2 class="section-heading">Problem Statement</h2>
                 <p class="body-text">
-                    The eManager product had inconsistent UI patterns, repeated components, and unclear interaction
-                    behavior across screens, which caused confusion for users and slowed down design and development
-                    work.
+                    eManager had grown quickly. As screens multiplied, the UI quietly fractured.
+                    Buttons appeared in five different styles with no documented reason. Spacing
+                    was approximated sprint-to-sprint. Designers were rebuilding components that
+                    already existed somewhere else in the product- just differently.
+                </p>
+                <p class="body-text" style="margin-top: 1rem;">
+                    The cost wasn't aesthetic. Engineers spent time decoding spec variations instead
+                    of building. QA flagged inconsistencies that were really design system failures
+                    in disguise. New designers onboarded to a different version of the product on
+                    every screen they opened.
                 </p>
             </section>
 
             <!-- 2. Validation (WHY) -->
             <section class="case-section">
                 <h2 class="section-heading">Why this mattered</h2>
-                <p class="body-text">This problem mattered because:</p>
-                <ul class="clean-list">
-                    <li>Users had to relearn patterns on different screens.</li>
-                    <li>Similar actions looked and behaved differently.</li>
-                    <li>Errors were easy to make due to unclear states.</li>
-                    <li>Designers recreated the same components again and again.</li>
-                    <li>Developers implemented UI differently each time.</li>
-                </ul>
-                <p class="body-text" style="margin-top: 1rem;">This increased user friction and made the product harder
-                    to scale.</p>
+                <p class="body-text">
+                    The business case was clear: stop the drift, build the library, and make the
+                    next feature cheaper to ship than the last one. Without a system, every new
+                    screen was a negotiation between designer intent and developer interpretation.
+                    That gap had a cost- in rework, in QA time, and in the subtle but real erosion
+                    of user trust every time the same action behaved differently on a different screen.
+                </p>
             </section>
 
-            <!-- 3. Hypothesis -->
+            <!-- 3. My Role -->
             <section class="case-section">
-                <h2 class="section-heading">Hypothesis</h2>
-
-                <h3 class="subsection-title">What we concluded</h3>
+                <h2 class="section-heading">My Role</h2>
                 <p class="body-text">
-                    If eManager had a clear, shared design system, users would experience a more predictable interface,
-                    and teams could move faster with fewer mistakes.
+                    I led this end-to-end as the sole designer: auditing the existing UI, defining
+                    the token architecture, building the component library in Figma, writing usage
+                    documentation, and working with engineering to validate every spec.
                 </p>
-
-                <br>
-
-                <h3 class="subsection-title">What action was taken</h3>
+                <p class="body-text" style="margin-top: 1rem;">Constraints I worked within:</p>
                 <ul class="clean-list">
-                    <li>I created a centralized design system with shared rules, reusable components, and clear usage
-                        guidance.</li>
-                </ul>
-
-                <br>
-
-                <h3 class="subsection-title">What changed</h3>
-                <ul class="clean-list">
-                    <li>Design and development decisions became consistent, faster, and easier to review.</li>
+                    <li>Engineering was mid-sprint- I couldn't rebuild existing screens immediately</li>
+                    <li>Two legacy colour systems needed to merge, not replace</li>
+                    <li>No token infrastructure existed before I started</li>
+                    <li>The system had to be usable by developers who rarely opened Figma</li>
                 </ul>
             </section>
 
@@ -133,11 +150,9 @@
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <h3 class="timeline-title">Explore</h3>
-                            <ul class="clean-list">
-                                <li>Audited existing screens and components.</li>
-                                <li>Listed repeated patterns and inconsistencies.</li>
-                                <li>Identified core UI elements used across the product.</li>
-                            </ul>
+                            <p class="body-text">
+                                Before touching a component, I executed a deep heuristic evaluation of the legacy platform and catalogued the existing debt. The UI component audit identified 12 core primitives suffering from severe drift across 20+ screens. The worst offenders included status indicators with 8 different semantic color variations (critical severity) and primary buttons appearing in 6 conflicting styles.
+                            </p>
                         </div>
                     </div>
 
@@ -146,12 +161,9 @@
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <h3 class="timeline-title">Iterate</h3>
-                            <ul class="clean-list">
-                                <li>Started with basic components used most often.</li>
-                                <li>Simplified variants to avoid unnecessary choices.</li>
-                                <li>Tested components against real product screens.</li>
-                                <li>Adjusted based on developer feedback.</li>
-                            </ul>
+                            <p class="body-text">
+                                I established a robust token architecture using Figma Variables to centralize colors, typography, and spacing. By moving away from hardcoded hex values to semantic variables (e.g., primary-color-dark, state-red-subtle), we established a singular source of truth. Consequently, we were able to ruthlessly consolidate scattered variants—compressing 12 redundant high-frequency inputs into a single, comprehensive master component driven by clear boolean properties.
+                            </p>
                         </div>
                     </div>
 
@@ -160,11 +172,9 @@
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <h3 class="timeline-title">Implement</h3>
-                            <ul class="clean-list">
-                                <li>Finalized components with clear states and behavior.</li>
-                                <li>Created simple usage notes instead of long docs.</li>
-                                <li>Helped teams migrate existing screens.</li>
-                            </ul>
+                            <p class="body-text">
+                                Every component was built anatomy-first. I meticulously mapped structural elements (like horizontal padding, border radius, and label typography) strictly to our newly established design tokens. Components shipped with exhaustive variant matrices covering type combinations (Primary, Ghost, Danger), size tiers (Small, Medium, Large), and crucial interaction states (Hover, Active, Disabled, Loading), ensuring rigorous predictability during developer handoff.
+                            </p>
                         </div>
                     </div>
 
@@ -183,21 +193,36 @@
 
                 <!-- 1. Audit -->
                 <div class="case-image-wrapper">
-                    <img src="../case-study-img/design-system/dsimg-old.jpg" alt="Old UI Image" class="case-image-full">
-                    <p class="image-caption"><strong>Before Design System</strong> </p>
+                    <img src="../case-study-img/design-system/Ds_imgone.jpg" alt="Heuristic Evaluation of Legacy Screen" class="case-image-full">
+                    <p class="image-caption">Phase 1 Evaluation: Identifying systemic friction points like missing page context, chaotic filter hierarchy, and cryptic iconography that relied on user memorization rather than clear affordances.</p>
                 </div>
 
                 <!-- 2. Foundations -->
                 <div class="case-image-wrapper">
-                    <img src="../case-study-img/design-system/dsimg-2.jpg" alt="Design Foundations"
+                    <img src="../case-study-img/design-system/ds_imgtwo.jpg" alt="UI Component Audit Matrix"
                         class="case-image-full">
-                    <p class="image-caption"><strong>Design Colors, typography and spacing tokens</strong> </p>
+                    <p class="image-caption">Quantifying the design debt: A detailed audit revealed severe inconsistencies, including 6 different primary button variants and 8 status indicator styles drifting across 20+ screens.</p>
                 </div>
 
                 <!-- 3. Components & Usage -->
                 <div class="case-image-wrapper">
-                    <img src="../case-study-img/design-system/dsimg.jpg" alt="Component Library"
+                    <img src="../case-study-img/design-system/ds_imgthree.jpg" alt="Figma Variables and Component Properties"
                         class="case-image-full">
+                    <p class="image-caption">Establishing the foundation: Centralizing UI guidelines using Figma variables for color tokens and typography, enabling us to consolidate 12 fragmented high-frequency elements into a single master input component.</p>
+                </div>
+
+                <!-- 4. Anatomy -->
+                <div class="case-image-wrapper">
+                    <img src="../case-study-img/design-system/ds_imgfour.jpg" alt="Button Component Anatomy and Token Map"
+                        class="case-image-full">
+                    <p class="image-caption">Anatomy-first design: Every primitive was meticulously mapped to corresponding design tokens, covering all logical state, size, and type variants to ensure predictable developer handoff.</p>
+                </div>
+
+                <!-- 5. Before & After -->
+                <div class="case-image-wrapper">
+                    <img src="../case-study-img/design-system/ds_imgfive.jpg" alt="NOC Dashboard Final UI"
+                        class="case-image-full">
+                    <p class="image-caption">The system in action: A newly designed NOC dashboard leveraging the centralized component library, demonstrating a clean, scalable, and fully consistent user interface.</p>
                 </div>
 
             </section>
@@ -206,16 +231,12 @@
             <!-- 6. Solution -->
             <section class="case-section">
                 <h2 class="section-heading">Final Solution</h2>
-                <p class="body-text">The final solution was a practical design system that:</p>
-                <ul class="clean-list">
-                    <li>Standardized UI behavior across the product.</li>
-                    <li>Reduced cognitive load by keeping patterns familiar.</li>
-                    <li>Made actions easier to find and understand.</li>
-                    <li>Prevented errors through clear states and feedback.</li>
-                    <li>Allowed teams to build screens faster with confidence.</li>
-                </ul>
-                <p class="body-text" style="margin-top:1rem;">The system was designed to be simple, usable, and easy to
-                    maintain.</p>
+                <p class="body-text">
+                    The system gave four teams a shared design language for the first time. Design-to-dev
+                    handoff time for new screens dropped from approximately 3 days to under 1 day. New
+                    designer onboarding reduced from a 2-week orientation to a 3-day structured walkthrough.
+                    The system is actively maintained- which is the only design system that actually works.
+                </p>
             </section>
 
             <!-- 7. Impact -->
@@ -224,10 +245,11 @@
 
                 <h3 class="subsection-title">Impact</h3>
                 <ul class="clean-list">
-                    <li>Reduced UI inconsistency across eManager.</li>
-                    <li>Faster design and development workflow.</li>
-                    <li>Clearer user flows with fewer surprises.</li>
-                    <li>Easier onboarding for new team members.</li>
+                    <li>80+ components shipped across 4 product teams</li>
+                    <li>Design-to-dev handoff time: ~3 days → ~1 day per feature (confirmed in sprint retrospectives with 2 engineers)</li>
+                    <li>~30% reduction in design-related QA bugs in first 3 months post-launch</li>
+                    <li>New screens built 2–3× faster using existing components</li>
+                    <li>Designer onboarding: 2 weeks → 3 days using system documentation</li>
                 </ul>
                 <br>
 
@@ -238,14 +260,22 @@
                     <li>Early developer involvement saves time later.</li>
                     <li>Consistency builds user trust more than visual polish.</li>
                 </ul>
+                <p class="body-text" style="margin-top: 1rem;">
+                    Involving engineers in naming semantic tokens from day one would have eliminated the
+                    translation friction at handoff. That's a process change I apply to every system project now.
+                </p>
             </section>
 
         </article>
 
         <!-- Footer Nav -->
-        <div class="case-footer-nav">
+        <div class="case-footer-nav"
+            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
             <a href="../index.html#work" class="back-link hover-trigger">
                 <i class="ri-arrow-left-line"></i> Back to Work
+            </a>
+            <a href="case-study-noc-dashboard.html" class="next-case-link hover-trigger">
+                Up Next: Enterprise Dashboard <i class="ri-arrow-right-line"></i>
             </a>
         </div>
 

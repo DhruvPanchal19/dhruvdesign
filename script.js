@@ -140,24 +140,25 @@ var SoundManager = {
     }
 };
 
-// Initialize Sound Manager immediately
-document.addEventListener('DOMContentLoaded', () => {
-    SoundManager.init();
+// Initialize SoundManager immediately - MOVED TO LOADING SCREEN LOGIC
+// document.addEventListener('DOMContentLoaded', () => {
+//     SoundManager.init();
+//     // The keydown listener was also moved out of here.
+// });
 
-    // Keyboard Shortcuts (Y = Yes, N = No) captured at document level for reliability
-    document.addEventListener('keydown', (e) => {
-        const modal = document.getElementById('sound-modal');
-        // Check computed style for visibility to be safe
-        const isVisible = modal && (modal.style.display === 'flex' || getComputedStyle(modal).display !== 'none');
+// Keyboard Shortcuts (Y = Yes, N = No) Global Listeners (Moved outside to ensure they always run)
+document.addEventListener('keydown', (e) => {
+    const modal = document.getElementById('sound-modal');
+    // Check computed style for visibility to be safe
+    const isVisible = modal && (modal.style.display === 'flex' || getComputedStyle(modal).display !== 'none');
 
-        if (isVisible) {
-            if (e.key.toLowerCase() === 'y') {
-                SoundManager.setPreference('yes');
-            } else if (e.key.toLowerCase() === 'n') {
-                SoundManager.setPreference('no');
-            }
+    if (isVisible) {
+        if (e.key.toLowerCase() === 'y') {
+            SoundManager.setPreference('yes');
+        } else if (e.key.toLowerCase() === 'n') {
+            SoundManager.setPreference('no');
         }
-    });
+    }
 });
 
 
@@ -433,16 +434,46 @@ function sendEmail(event) {
 
 // 7. Simplified Project Navigation (No Auth)
 function handleProjectClick(url) {
-    window.location.href = url;
+    const loadingScreen = document.getElementById('loading-screen');
+    if (loadingScreen && typeof gsap !== 'undefined') {
+        loadingScreen.style.display = 'flex';
+        loadingScreen.style.opacity = '0'; // Start invisible
+
+        gsap.to(loadingScreen, {
+            opacity: 1,
+            duration: 0.5,
+            ease: "power2.out",
+            onComplete: () => {
+                window.location.href = url;
+            }
+        });
+    } else {
+        window.location.href = url;
+    }
 }
 
-// 8. Simplified CV Download (No Auth)
-const cvUrl = "dhruvpanchal_uiux.pdf";
+// 7b. Smooth Page Transitions (Gallery, Home, Works)
+document.addEventListener('DOMContentLoaded', () => {
+    const transitionLinks = document.querySelectorAll('.view-gallery-btn, .back-link, .nav-link[href="index.html"], .work-item');
 
-function handleCVClick(event) {
-    if (event) event.preventDefault();
-    window.open(cvUrl, '_blank');
-}
+    transitionLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            // Check if it's a link (work-items use onclick attribute handled separately, but we can verify)
+            // For work-item, the onclick attribute usually handles it, but if we want to be consistent we could migrate.
+            // For now, let's stick to the anchors.
+            if (link.tagName === 'A') {
+                const href = link.getAttribute('href');
+                // Only intercept internal page links
+                if (href && !href.startsWith('#') && !href.startsWith('mailto:') && !link.target) {
+                    e.preventDefault();
+                    handleProjectClick(href);
+                }
+            }
+        });
+    });
+});
+
+
 
 
 
@@ -725,3 +756,89 @@ function initHero3D() {
 }
 // Initialize on Load
 document.addEventListener('DOMContentLoaded', initHero3D);
+
+// 15. Global Loading Screen & Asset Preloader
+document.addEventListener("DOMContentLoaded", () => {
+    const loadingScreen = document.getElementById('loading-screen');
+    const progressText = document.querySelector('.loading-percentage');
+    const progressBar = document.querySelector('.loading-progress');
+
+    // Disable Right Click Globally (Protects Photography)
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    // Images to preach
+    const images = document.querySelectorAll('img');
+    let loadedCount = 0;
+    const totalImages = images.length;
+
+    // Simulating progress if no images or very fast
+    let progress = 0;
+
+    function updateProgress(value) {
+        progress = value;
+        if (progressText) progressText.innerText = Math.round(progress) + '%';
+        if (progressBar) progressBar.style.width = progress + '%';
+    }
+
+    // Force at least 1s of load time for "feel"
+    let interval = setInterval(() => {
+        if (progress < 90) {
+            updateProgress(progress + (Math.random() * 10));
+        }
+    }, 100);
+
+    // Actual image load check
+    if (totalImages === 0) {
+        completeLoading();
+    } else {
+        images.forEach(img => {
+            if (img.complete) {
+                loadedCount++;
+            } else {
+                img.addEventListener('load', () => {
+                    loadedCount++;
+                    checkCompletion();
+                });
+                img.addEventListener('error', () => {
+                    loadedCount++;
+                    checkCompletion();
+                });
+            }
+        });
+        checkCompletion();
+    }
+
+    function checkCompletion() {
+        // Calculate real progress but keep it dominated by the simulation until end
+        const realProgress = (loadedCount / totalImages) * 100;
+        if (loadedCount === totalImages) {
+            setTimeout(completeLoading, 500); // Small buffer
+        }
+    }
+
+    function completeLoading() {
+        clearInterval(interval);
+        updateProgress(100);
+
+        // GSAP Fade Out
+        if (typeof gsap !== 'undefined') {
+            gsap.to(loadingScreen, {
+                opacity: 0,
+                duration: 0.8,
+                ease: "power2.inOut",
+                onComplete: () => {
+                    loadingScreen.style.display = 'none';
+                    // Trigger Hero Animation Here
+                    SoundManager.init(); // Triggers the modal check or hero start
+                }
+            });
+        } else {
+            loadingScreen.style.display = 'none';
+            SoundManager.init();
+        }
+    }
+});
+
+// Remove old independent init of SoundManager to prevent double calls or race conditions
+// document.addEventListener('DOMContentLoaded', () => { SoundManager.init(); ... });
+// We moved SoundManager.init() into completeLoading()

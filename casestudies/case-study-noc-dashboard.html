@@ -13,7 +13,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOC Dashboard - Case Study | Dhruv Panchal</title>
+    <title>NOC Dashboard- Enterprise Monitoring · Dhruv Panchal</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,10 +47,10 @@
 
         <!-- Hero -->
         <header class="case-hero">
-            <h1 class="case-title">Designed a unified alert dashboard so NOC teams could see and respond to outages
-                faster.</h1>
-            <p class="case-subtitle">Redesigned the monitoring experience to improve clarity, reduce turn-around time,
-                and make outage handling smoother.</p>
+            <h1 class="case-title">When a server goes down at 3am, a NOC engineer shouldn't need four tools to
+                understand what broke.</h1>
+            <p class="case-subtitle">I collapsed Azure, Datadog, ServiceNow, and an internal portal into a single-window
+                alert dashboard- reducing context switching and making triage faster for a 24/7 operations team.</p>
 
             <div class="case-meta">
                 <div class="meta-item">
@@ -73,6 +73,10 @@
         <!-- Content Structure -->
         <article class="case-content">
 
+            <div class="case-image-wrapper">
+                <img src="../case-study-img/noc-dashboard/NOCAlertDashboard.jpg" alt="NOC Dashboard main view - dark mode" class="case-image-full">
+            </div>
+
             <!-- 1. Problem Statement -->
             <section class="case-section">
                 <h2 class="section-heading">Problem Statement</h2>
@@ -87,16 +91,13 @@
             <!-- 2. Validation (WHY) -->
             <section class="case-section">
                 <h2 class="section-heading">Why this mattered</h2>
-                <p class="body-text">The old process forced team members to jump between 4–5 tools just to figure out
-                    what went wrong. This led to:</p>
-                <ul class="clean-list">
-                    <li>Delayed response to outages.</li>
-                    <li>Higher risk of missing important alerts.</li>
-                    <li>More errors due to context switching.</li>
-                    <li>Slower documentation of what happened and how it was resolved.</li>
-                </ul>
-                <p class="body-text" style="margin-top: 1rem;">For a 24/7 ops team, this meant longer downtimes and
-                    higher business risk.</p>
+                <p class="body-text">
+                    Every context switch added time. For a 24/7 operations team, time is measured in
+                    downtime cost. Engineers dreaded the start of an incident- not because the problem
+                    was hard, but because the process of understanding it required opening four separate
+                    tools in sequence before any action could be taken. Missed alerts during that window
+                    had real business consequences.
+                </p>
             </section>
 
             <!-- 3. Hypothesis -->
@@ -105,9 +106,12 @@
 
                 <h3 class="subsection-title">What we concluded</h3>
                 <p class="body-text">
-                    Having to check multiple sources was causing confusion and slowdowns. We needed a single view to
-                    pull
-                    in all relevant alerts and details.
+                    A significant constraint: NDA and security protocols meant no direct access to
+                    end users for formal research. Instead, I worked with engineering leads and incident
+                    managers to map the existing workflow step-by-step, reviewed incident documentation
+                    to understand alert volume and type patterns, and treated engineering feedback as
+                    proxy user research- explicit, domain-specific, and honest about what slowed
+                    them down.
                 </p>
 
                 <br>
@@ -115,7 +119,8 @@
                 <h3 class="subsection-title">What we did</h3>
                 <p class="body-text">
                     We designed and built a central alert dashboard. This let NOC managers and team members see alerts
-                    from all sources in one place, act on them directly, and keep track of steps taken—all from a single
+                    from all sources in one place, act on them directly, and keep track of steps taken - all from a
+                    single
                     window.
                 </p>
             </section>
@@ -146,9 +151,23 @@
                         <div class="timeline-content">
                             <h3 class="timeline-title">Iterate</h3>
                             <ul class="clean-list">
-                                <li>Tested different layouts—table views, timelines, card layouts.</li>
+                                <li>Tested different layouts - table views, timelines, card layouts.</li>
                                 <li>Rejected options that hid too much info or required extra clicks.</li>
                                 <li>Balanced detail with clarity to avoid overwhelming the screen.</li>
+                            </ul>
+
+                            <h3 style="margin-top: 2rem;">Key design decisions</h3>
+                            <ul class="clean-list">
+                                <li><strong>Severity-first visual hierarchy:</strong> Critical (red), Warning (amber),
+                                    Info (blue)- colour-coded at every level so engineers read severity before reading
+                                    text</li>
+                                <li><strong>Inline context panel:</strong> Clicking an alert opens a right-panel drawer
+                                    with full timeline, affected systems, and one-click actions (Acknowledge / Escalate
+                                    / Resolve)- no new tab, no context switch</li>
+                                <li><strong>Service-grouped sorting:</strong> Default sort by service/system group, not
+                                    timestamp- matches how engineers think about infrastructure during an incident</li>
+                                <li><strong>Four persistent metric cards:</strong> Open, Critical, MTTR, Resolved-
+                                    always visible so engineers get shift-start status without scrolling</li>
                             </ul>
                         </div>
                     </div>
@@ -184,14 +203,16 @@
                 <!-- 1 -->
                 <div class="case-image-wrapper">
                     <img src="../case-study-img/noc-dashboard/NOC-wp.jpg" alt="NOC Work Panel" class="case-image-full">
-                    <p class="image-caption text-center"><strong>NOC Work Panel</strong> </p>
+                    <p class="image-caption text-center">NOC work panel- severity-coded alert list with service grouping
+                        and persistent metric cards</p>
                 </div>
 
                 <!-- 2 -->
                 <div class="case-image-wrapper">
                     <img src="../case-study-img/noc-dashboard/NOC-alert.jpg" alt="NOC Work Panel"
                         class="case-image-full">
-                    <p class="image-caption text-center"><strong>Alert Detail Screen</strong> </p>
+                    <p class="image-caption text-center">Alert detail screen- full incident timeline, affected systems,
+                        and one-click resolution actions in a right-panel drawer</p>
                 </div>
 
             </section>
@@ -217,8 +238,14 @@
                 <h2 class="section-heading">Impact & Learnings</h2>
 
                 <h3 class="subsection-title">Impact</h3>
+                <p class="body-text" style="margin-bottom: 1rem;">
+                    Without pre-project instrumented baselines (restricted by NDA), we documented outcomes
+                    through structured walkthroughs with NOC engineers post-launch: tool-switching steps per
+                    incident dropped from 4 separate applications to 1. Engineers described first-response
+                    time as noticeably faster in retrospective sessions. Formal MTTR tracking was flagged for
+                    Q2 instrumentation.
+                </p>
                 <ul class="clean-list">
-                    <li>Outage turn-around time dropped (directionally—flow was much smoother).</li>
                     <li>Fewer missed alerts and handoff mistakes.</li>
                     <li>Easier documentation and knowledge sharing.</li>
                     <li>Managers could spot patterns and repeat issues more easily.</li>
@@ -236,9 +263,13 @@
         </article>
 
         <!-- Footer Nav -->
-        <div class="case-footer-nav">
+        <div class="case-footer-nav"
+            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
             <a href="../index.html#work" class="back-link hover-trigger">
                 <i class="ri-arrow-left-line"></i> Back to Work
+            </a>
+            <a href="case-study-smart-university.html" class="next-case-link hover-trigger">
+                Up Next: Smart University LMS <i class="ri-arrow-right-line"></i>
             </a>
         </div>
 
